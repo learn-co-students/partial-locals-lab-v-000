@@ -21,7 +21,9 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    #@students = Student.all
+    @students = Student.search(params[:query]) #if no search query, then it will return all students
+    render 'index' #this way the search form in the index page can call index route again to search
   end
 
   def student_params
