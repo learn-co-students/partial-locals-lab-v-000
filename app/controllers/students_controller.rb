@@ -22,6 +22,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    redirect_to 'students/index'
   end
 
   def student_params
