@@ -1,0 +1,6 @@
+
+<ul>
+<%= @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
+<% end %>
+</ul>
