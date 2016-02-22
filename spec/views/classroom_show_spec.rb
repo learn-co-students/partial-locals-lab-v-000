@@ -1,4 +1,5 @@
 require "rails_helper"
+require 'launchy'
 
 RSpec.describe "classroom_show_view" do
   let(:classroom) { Classroom.create(course_name: 'Math', semester: "Spring #{Time.now.year}") }
