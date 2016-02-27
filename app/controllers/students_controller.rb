@@ -21,8 +21,13 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    @students = Student.search(params[:student])
   end
+
+  def search
+    # why can't i get my form to direct here?
+  end
+
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
