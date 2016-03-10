@@ -6,5 +6,13 @@ class ClassroomsController < ApplicationController
 
   def index
     @classrooms = Classroom.all
+    if params[:search]
+      @classrooms = Classroom.search(params[:search]).order("created_at DESC")
+    else
+      @classrooms = Classroom.all.order('created_at DESC')
+    end
   end
+
+  end
+
 end
