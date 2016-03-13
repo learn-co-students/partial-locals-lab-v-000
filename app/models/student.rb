@@ -11,6 +11,12 @@
 #
 
 class Student < ActiveRecord::Base
+  validates :name, presence: true
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(terms)
+    
+    where("name LIKE ?", "%#{terms}%")
+  end
 end
