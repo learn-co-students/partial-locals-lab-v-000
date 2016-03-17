@@ -1,0 +1,7 @@
+<h1>Classrooms</h1>
+
+<% @classrooms.each do |classroom| %>
+  <a href="<%= classroom_path(classroom) %>">
+    <%= render :partial =>  "classroom", locals: {classroom: classroom} %>
+  </a>
+<% end %>
