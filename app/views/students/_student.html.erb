@@ -1,15 +1,12 @@
-<% students.each do |s| %>
-
 <ul>
   <li>
-    Name: <%= s.name %>
+    Name: <%= student.name %>
   </li>
   <li>
-    Birthday: <%= s.birthday.strftime("%m/%d/%Y")  %>
+    Birthday: <%= student.birthday.strftime("%m/%d/%Y")  %>
   </li>
   <li>
-    Hometown: <%= s.hometown.capitalize %>
+    Hometown: <%= student.hometown.capitalize %>
   </li>
 </ul>
 
-<% end %>
