@@ -1,8 +1,9 @@
-Classroom Info
-<p>
-<%= @classroom.course_name %>
-<%= @classroom.semester %>
-</p>
+<h1>Classroom Info</h1>
 
-We now want to call out the oldest student in the class:
-<%= render 'students/student' %>
+<%= render partial: "classroom", locals: {classroom: @classroom} %>
+
+<h2>All Students in this class</h2>
+
+<% @classroom.students.each do |one_student| %>
+<%= render partial: "students/student", locals: {student: one_student} %>
+<% end %>
