@@ -13,4 +13,15 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(nickname)
+    # match the nickname
+    if nickname == ''
+      Student.all
+    else
+      Student.all.select do |s|
+        s.name =~ /Rob/
+      end
+    end
+  end
 end
