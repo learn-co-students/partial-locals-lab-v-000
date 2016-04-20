@@ -1,4 +1,5 @@
- <ul>
+<% @classroom.students.each do |student| %>
+  <ul>
     <li>
       Name: <%= student.name %>
     </li>
@@ -9,3 +10,4 @@
       Hometown: <%= student.hometown.capitalize %>
     </li>
   </ul>
+<% end %>
