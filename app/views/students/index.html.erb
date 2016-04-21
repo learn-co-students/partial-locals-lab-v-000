@@ -1,0 +1,17 @@
+All Students With Matching Name (or All, otherwise):<br>
+<!-- search functionality
+  1. includes text field with params hash of params[:query]
+  2. GET students goes to the controller action students#index
+  3. @students is set by the Student.search method
+  4. index view is rendered with the @students variable, customized by the params[:query]
+-->
+<%= form_tag "/students", method: "get" do %>
+  <%= text_field_tag :query%>
+  <%= submit_tag "Find Students by Name" %>
+<% end %>
+
+<ul>
+<% @students.each do |student| %>
+  <%= render partial: "student", locals: {student: student}%><br>
+<% end %>  
+</ul>

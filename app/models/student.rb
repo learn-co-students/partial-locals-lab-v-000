@@ -12,5 +12,18 @@
 
 class Student < ActiveRecord::Base
   has_many :classroom_students
-  has_many :classrooms, through: :classroom_students
+  has_many :classrooms, through: :classroom_students 
+
+  def self.search(query)
+    if query.present?
+      #if search term provided
+      self.all.select do |student|
+        student.name.downcase.include?(query)
+      end
+    else
+      #if no search term provided
+      self.all
+    end
+  end
+ 
 end

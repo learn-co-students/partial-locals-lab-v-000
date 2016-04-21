@@ -21,7 +21,9 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    #sets @students based on whether search term provided
+    #goes to model and runs #search method
+    @students = Student.search(params[:query])
   end
 
   def student_params
