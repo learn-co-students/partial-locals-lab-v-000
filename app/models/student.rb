@@ -33,7 +33,11 @@ class Student < ActiveRecord::Base
   # this method is better:
   def self.search(search)
     # example: SELECT "students".* FROM "students" WHERE (name LIKE '%cris%')
-    self.where("name LIKE ?", "%#{search}%") 
+    if search.present?
+      self.where("name LIKE ?", "%#{search}%") 
+    else
+      self.all
+    end
   end
 
 end
