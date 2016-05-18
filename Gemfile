@@ -38,7 +38,10 @@ group :development, :test do
   gem 'annotate'
   gem 'pry-byebug'
   gem 'faker'
+  gem 'tzinfo-data', platform: [:mingw, :mswin, :x64_mingw]
 end
+
+gem 'pry', group: :test
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

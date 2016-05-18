@@ -1,0 +1,17 @@
+
+<% @students.each do |student| %>
+	
+	<%= render partial: 'student', locals: {student: student} %>
+	<br/>
+
+<%end%>
+
+<h1> Search by Name </h1>
+<%= form_tag ('/search') %>
+
+<%= label_tag ('student[name]'), "Search" %>
+<%= text_field_tag ('student[name]')%>
+
+<%= submit_tag "Find Students" %>
+
+
