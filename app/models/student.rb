@@ -13,4 +13,21 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+
+  def self.search(name_array)
+    if name_array == ""
+      Student.all
+    elsif !name_array.kind_of?(Array)
+        Student.where('name like ?', "%#{name_array}%")
+    else
+    s.collect do |name|
+        name if Student.where('name like ?', "%#{name}%")
+    end
+
+      
+
+
+     end
+  end
 end
