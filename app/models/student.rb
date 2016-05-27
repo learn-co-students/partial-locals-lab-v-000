@@ -17,7 +17,6 @@ class Student < ActiveRecord::Base
 
 
     def self.search(name)
-      binding.pry
       if name.empty?
         Student.all
       else
