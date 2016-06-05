@@ -1,0 +1,3 @@
+<% @students.each do |student_found| %>
+  <%= render partial: 'student', :locals => {student: student_found} %>
+<% end %>
