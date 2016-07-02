@@ -13,4 +13,15 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+  validates :name, presence: true
+  validates :birthday, presence: true
+
+  def self.search(name)
+    if name
+      where('name LIKE ?', "%#{name}%")
+    else
+     all
+    end
+  end
+
 end
