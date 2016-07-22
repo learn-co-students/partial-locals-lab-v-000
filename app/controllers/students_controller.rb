@@ -13,15 +13,23 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    @student = Student.find(params[:id])
   end
 
   def show
-    @student = Student.find(params[:id])
   end
 
   def index
     @students = Student.all
+    if params[:name]
+      @students = Student.search(params[:name])
+    else
+      @students = Student.all
+    end
+  end
+
+  def search
+    @student = Student.find_by(:name)
+    redirect_to students_path(@student)
   end
 
   def student_params
