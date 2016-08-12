@@ -1,8 +1,14 @@
 <%= form_tag students_path, :method => "get" do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search students..." %>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
 
-<%= render partial: 'student', collection: @students %>
+<% if @students.present? %>
+  <% @students.each do |student| %>
+    <%= render partial: 'student', locals: {student: student} %>
+  <% end %>
+<% else %>
+  <p>There are no students matching "<%= params[:search] %>".</p>
+<% end %>
