@@ -5,6 +5,14 @@
   </p>
 <% end %>
 
+<!--
+I was initially using the partial to render a collection (which works) but, apparently,
+the tests wanted me to pass in a local variable.
+
+The _student.html.erb partial rendering a collection would look like (in erb):
+render partial: 'student', collection: @students
+-->
+
 <% if @students.present? %>
   <% @students.each do |student| %>
     <%= render partial: 'student', locals: {student: student} %>
