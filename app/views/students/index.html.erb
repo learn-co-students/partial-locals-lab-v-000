@@ -5,9 +5,16 @@
   </p>
 <% end %>
 
+
+
 <!--
-I was initially using the partial to render a collection (which works) but, apparently,
-the tests wanted me to pass in a local variable.
+The best resources to understand how to set up a simple search form are:
+- http://www.korenlc.com/creating-a-simple-search-in-rails-4/
+- http://railscasts.com/episodes/37-simple-search-form
+
+Regarding rendering the search results, I was initially using the partial to
+render a collection (which works) but, apparently, the tests wanted me to pass
+in a local variable.
 
 The _student.html.erb partial rendering a collection would look like (in erb):
 render partial: 'student', collection: @students
