@@ -16,11 +16,7 @@ class Student < ActiveRecord::Base
 
   def self.search(search)
     if search
-      self.all.map do |student|
-        if student.name.downcase.include?(search.downcase)
-          student
-        end
-      end.compact
+      self.all.select {|student| student.name.downcase.include?(search.downcase)}
     else
       self.all
     end
