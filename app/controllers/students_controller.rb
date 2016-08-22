@@ -28,8 +28,6 @@ class StudentsController < ApplicationController
       else
         @students = Student.search(params[:search])
       end
-    else
-      @students = Student.all
     end
   end
 
