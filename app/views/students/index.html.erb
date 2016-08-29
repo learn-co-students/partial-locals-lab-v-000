@@ -1,0 +1,10 @@
+Search for student
+<%= form_tag({:controller => "students", :action => "index"}, {:method => "get"}) do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
+
+
+<% @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
+<% end %>
