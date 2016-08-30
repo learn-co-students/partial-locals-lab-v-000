@@ -3,9 +3,12 @@
 <%= submit_tag "Search" %>
 <% end %>
 
+<% if @students.present? %>
 
-<% @student_names.each do |student| %>
+<% @students do |student| %>
 
 <%= render partial: 'student', locals: {student: student} %> 
+
+<% end %>
 
 <% end %>
