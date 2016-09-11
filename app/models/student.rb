@@ -13,4 +13,8 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(term)
+    self.all.map {|s| s if s.name.downcase.include?(term)}.compact
+  end
 end
