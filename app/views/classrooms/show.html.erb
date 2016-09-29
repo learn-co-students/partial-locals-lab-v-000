@@ -1,10 +1,10 @@
 Classroom Info
 
-<%= render partial: 'classrooms/classroom', locals: {classroom: @classroom} %>
+<%= render partial: 'classroom', locals: {classroom: @classroom} %>
 
 We now want to list all students:
 <ul>
-  <%= @students.each do |student| %>
+  <%= @classroom.students.each do |student| %>
     <li>
       <%= render partial: 'students/student', locals: {student: student} %>
     </li><br />
