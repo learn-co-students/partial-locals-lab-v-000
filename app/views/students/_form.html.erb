@@ -1,4 +1,7 @@
-<%= form_for @student do |f|%>
+<!-- 
+Refactor the _form.html.erb partial to accept the argument to the form_for helper as a local. You'll also need to change the new.html.erb and edit.html.erb views as well. -->
+
+<%= form_for(student) do |f|%>
 <p>
   <%= f.label :name %>
   <%= f.text_field :name %>
