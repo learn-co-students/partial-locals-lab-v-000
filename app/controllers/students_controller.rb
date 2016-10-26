@@ -12,16 +12,19 @@ class StudentsController < ApplicationController
     end
   end
 
-  def edit
-    @student = Student.find(params[:id])
-  end
-
   def show
     @student = Student.find(params[:id])
   end
 
+  def edit
+    @student = Student.find(params[:id])
+  end
+
+
   def index
-    @students = Student.all
+    @students = Student.all 
+   # @students = Student.search(params[:search])
+    render 'index'
   end
 
   def student_params
