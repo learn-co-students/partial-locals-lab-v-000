@@ -1,8 +1,8 @@
-<%= render "students", search: student do |f| %>
-  <p>
-    Title contains: <%= f.text_field :title_contains %>
-  </p>
+<%= form_tag students_path, method: :get  do %>
+  <%= text_field_tag :query %>
+  <%= submit_tag 'Search', name: nil %>
 <% end %>
 
-
-# what follows "search:"  ??  is "student" the model method?
+<% @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
+<% end %>

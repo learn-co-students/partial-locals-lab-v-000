@@ -10,15 +10,3 @@
   </li>
 </ul>
 
-
-<%= form_for(student) do |f| %>
-  <h1>Search form:</h1>
-  <fieldset>
-    <%= yield f %>
-  </fieldset>
-  <p>
-    <%= f.submit "Search" %>
-  </p>
-<% end %>
-
-#This produces a search form in students/idx that isnt usable
