@@ -1,0 +1,9 @@
+<%= form_for(@students) do |f| %>
+  <h1>Search form:</h1>
+  <fieldset>
+    <%= yield f %>
+  </fieldset>
+  <p>
+    <%= f.submit "Search" %>
+  </p>
+<% end %>
