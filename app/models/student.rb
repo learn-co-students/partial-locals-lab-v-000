@@ -13,4 +13,15 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+  
+  def self.search(name)
+    @students = []
+    Student.all.each do |student|
+      if student.name =~ /#{name}/i
+        @students << student
+      end
+    end
+    @students
+  end
+
 end
