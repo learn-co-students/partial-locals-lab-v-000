@@ -1,0 +1,6 @@
+<%= form_tag('/students', method: :get) do %>
+  <b><%= label_tag :search %></b><br></br>
+  <%= text_field_tag :search %><br></br>
+  <%= submit_tag 'Search' %><br></br>
+  <br>
+<% end %>
