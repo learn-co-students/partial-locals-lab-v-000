@@ -3,7 +3,7 @@ Classroom Info
 <%= render partial: 'classroom', locals: {classroom: @classroom} %>
 </p>
 
-<%= form_tag do %>
+<%= form_tag('/students/index', method: :get) do %>
   <b><%= label_tag :search %></b><br></br>
   <%= text_field_tag :search %><br></br>
   <%= submit_tag 'Search' %><br></br>

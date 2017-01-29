@@ -6,6 +6,5 @@ class ClassroomsController < ApplicationController
 
   def index
     @classrooms = Classroom.all
-    @students = Student.search(params[:search])
   end
 end
