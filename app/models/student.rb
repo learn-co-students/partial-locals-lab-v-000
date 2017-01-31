@@ -13,4 +13,11 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(arg)
+    @ary = Student.all.find(arg) {|student| student.name.include? "arg" }
+
+    #render partial: "students/student", locals: {student: @student} 
+  end
+
 end
