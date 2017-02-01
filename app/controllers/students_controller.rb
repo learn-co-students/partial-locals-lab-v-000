@@ -12,6 +12,10 @@ class StudentsController < ApplicationController
     end
   end
 
+  def search
+    binding.pry
+    @student = Student.search
+  end
   
 
   def edit
