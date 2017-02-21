@@ -2,4 +2,9 @@
 <%= render partial: '/classrooms/classroom', locals: { classroom: @classroom } %>
 </div>
 
-<%= render partial: '/students/student', locals: { students: @students } %>
+
+
+
+<% @classroom.students.each do |student| %>
+  <%= render partial: '/students/student', locals: { student: student } %>
+<% end %>
