@@ -22,7 +22,6 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.search(params[:query])
-    raise params.inspect if params[:query]
     render 'index'
   end
 
