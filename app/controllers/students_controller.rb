@@ -21,7 +21,8 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    @students = Student.match(params[:find])
+
   end
 
   def student_params
