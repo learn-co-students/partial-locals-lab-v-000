@@ -2,7 +2,7 @@
 
 <fieldset>
 <legend>Search a Student</legend>
-  <%= form_tag student_path, method: :get do %>
+  <%= form_tag students_path, method: :get do %>
   <%= text_field_tag :search, params[:search] %>
   <% end %>
 </fieldset>
