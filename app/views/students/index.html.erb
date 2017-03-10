@@ -1,5 +1,12 @@
 <h3> Search Results </h3>
 
+<fieldset>
+<legend>Search a Student</legend>
+  <%= form_tag student_path, method: :get do %>
+  <%= text_field_tag :search, params[:search] %>
+  <% end %>
+</fieldset>
+
 <% @students.each do |student| %>
 <%= render partial: 'student', locals: {student: student} %>
 <% end %>

@@ -16,7 +16,7 @@ class Student < ActiveRecord::Base
 
   def self.search(search)
     @search = search
-    name.present? ? Student.where("name like ?", "%#{@search}%").all : Student.all
+    @search.present? ? self.where("name like ?", "%#{@search}%").all : self.all
   end
 
 
