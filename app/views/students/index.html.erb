@@ -1,5 +1,5 @@
-<%= form_tag(students_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Students" %>
+<%= form_tag students_path, :method => "get", id: "search-form" do %>
+    <%= text_field_tag :query, params[:query], placeholder: "Search Students" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 
