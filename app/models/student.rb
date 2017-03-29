@@ -30,3 +30,12 @@ class Student < ActiveRecord::Base
     end
   end
 end
+
+
+# def self.search(query)
+#     if query.present?
+#       where('NAME like ?', "%#{query}%")
+#     else
+#       self.all
+#     end
+#   end
