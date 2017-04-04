@@ -1,3 +1,4 @@
+require 'pry'
 # == Schema Information
 #
 # Table name: students
@@ -11,6 +12,17 @@
 #
 
 class Student < ActiveRecord::Base
-  has_many :classroom_students
-  has_many :classrooms, through: :classroom_students
+    has_many :classroom_students
+    has_many :classrooms, through: :classroom_students
+
+    def self.search(name="")
+        @students = self.all
+        if !name.empty?
+            @students = @students.select do |student|
+                student if student.name.downcase.include? (name.downcase)
+            end
+        end
+#        binding.pry
+        return @students
+    end
 end
