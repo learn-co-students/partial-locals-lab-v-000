@@ -11,6 +11,19 @@
 #
 
 class Student < ActiveRecord::Base
+  require 'pry'
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  
+
+  def self.search(student_name) 
+    if student_name.present?
+      where('NAME like ?', "%#{student_name}%")
+      
+    else 
+      self.all  
+    end  
+  end  
+
 end
