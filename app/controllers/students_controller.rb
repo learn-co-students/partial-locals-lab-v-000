@@ -1,4 +1,3 @@
-require 'pry'
 class StudentsController < ApplicationController
   def new
     @student = Student.new
@@ -22,9 +21,7 @@ class StudentsController < ApplicationController
   end
 
   def index
-    binding.pry
-   @students = Student.search(student)
-   binding.pry
+    @students = Student.search(student)
   end
 
   def student_params
