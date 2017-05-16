@@ -1,9 +1,5 @@
-Classroom Info
-<%= render 'classroom' %>
-
-All the students in the class:
-<% @classroom.students.each do |student| %>
-  <%= render partial: 'students/student', locals: {student: student} %>
+<% @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
   <!-- Here in {student: student}, the first 'student:' refers to the 'student' used in the partial '_student', and the 'student'
   refers to the 'student' variable from the loop in the line above -->
 <% end %>
