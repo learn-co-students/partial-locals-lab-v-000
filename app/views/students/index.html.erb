@@ -1,0 +1,12 @@
+<%= form_tag students_path, method: :get do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search students by name" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<% @students.each do |student| %>
+    <%= render partial: 'student', locals: {student: student} %>
+<% end %>
+
+<% if @students.blank? %>
+  There are no students containing the name <%= params[:search] %>.
+<% end %>
