@@ -20,13 +20,13 @@ Second, they also want to add some search functionality so that a user can searc
 
 ## Instructions
 
-1. Refactor the `_form.html.erb` partial to accept the argument to the `form_for` helper as a local.  You'll also need to change the `new.html.erb` and `edit.html.erb` views as well.
+[X] 1. Refactor the `_form.html.erb` partial to accept the argument to the `form_for` helper as a local.  You'll also need to change the `new.html.erb` and `edit.html.erb` views as well.
 
-2. Refactor the `_student.html.erb` partial to pass through each rendered student as a local.
+[X] 2. Refactor the `_student.html.erb` partial to pass through each rendered student as a local.
 
-3. On the classroom show page, iterate through each classroom's students and display each of them using our `_student.html.erb` partial with locals.
+[X] 3. On the classroom show page, iterate through each classroom's students and display each of them using our `_student.html.erb` partial with locals.
 
-4. Create a `_classroom.html.erb` partial to display classroom information on the classroom show page.
+[X] 4. Create a `_classroom.html.erb` partial to display classroom information on the classroom show page.
 
 5. Add in search functionality such that users can search for a student by name and see all matching results on the students index page. The results should be displayed by rendering a `students/_student.html.erb` partial.
 
