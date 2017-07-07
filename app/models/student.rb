@@ -13,4 +13,10 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(query)
+    students = self.all
+    query.blank? ? students : students.find_all{|student| student.name.downcase.match(query.downcase)} 
+  end
+
 end
