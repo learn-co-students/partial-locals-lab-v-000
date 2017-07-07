@@ -21,7 +21,8 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    @student = Student.seatch(params[:input])
+    render 'index'
   end
 
   def student_params
