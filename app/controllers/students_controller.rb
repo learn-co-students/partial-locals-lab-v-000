@@ -1,3 +1,4 @@
+require 'pry'
 class StudentsController < ApplicationController
   def new
     @student = Student.new
@@ -21,7 +22,7 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @student = Student.seatch(params[:input])
+    @students = Student.search(params[:input])
     render 'index'
   end
 
