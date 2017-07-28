@@ -1,0 +1,15 @@
+<% if @students.present? %>
+  <%= render @students %>
+<% else %>
+  <p>There are no students containing the term(s) <%= params[:search] %>.</p>
+<% end %>
+
+Search Students:
+<%= form_tag(students_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Students" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<%= @students.each do |student| %>
+<%= render partial: 'student', locals: {student: student} %>
+<% end %>
