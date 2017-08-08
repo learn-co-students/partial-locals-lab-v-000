@@ -1,1 +1,2 @@
-<%= render 'form' %>
+<% student = Student.new %>
+<%= render partial: 'form', locals: {student: @student} %>
