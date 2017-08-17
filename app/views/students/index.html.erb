@@ -1,0 +1,11 @@
+<h1>All Students</h1>
+<% @students.each do |std| %>
+<%= render  partial: 'student', locals: {oldest_student: std} %>
+<% end %>
+
+find a student ?
+<%= form_for students_path, :method => 'get' do |s| %>
+<label> Search by name:</label>
+<%= s.text_field :name%>
+<%= s.submit "search" %>
+<% end %>
