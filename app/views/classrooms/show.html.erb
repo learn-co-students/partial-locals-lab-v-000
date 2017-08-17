@@ -4,5 +4,5 @@ Classroom Info
 <h2>all Students<br>
 
 <% @classroom.students.each do |std| %>
-<%= render partial: 'students/student', locals: {oldest_student: std} %>
+<%= render partial: 'students/student', locals: {student: std} %>
 <% end %>

@@ -22,6 +22,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.search(params[:name])
+    #@students.each do |std| render partial: 'students/student', locals: {student: std} end
   end
 
   def update
@@ -36,4 +37,3 @@ class StudentsController < ApplicationController
     params.require(:student).permit(:name, :birthday, :hometown)
   end
 end
- 
