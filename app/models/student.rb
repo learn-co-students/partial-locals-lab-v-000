@@ -19,7 +19,7 @@ class Student < ActiveRecord::Base
     @student_array = []
     @students = Student.all
     @students.each do |stud|
-      if stud.name == student
+      if stud.name.include?(student)
         @student_array << stud
       end
     end
