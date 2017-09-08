@@ -1,0 +1,10 @@
+
+<%if @student_array.empty?%>
+  <%= @students.each do |student|%>
+  <%= render partial: "student", locals: {student: student}%>
+  <%end%>
+<%else%>
+  <%= @student_array.each do |student|%>
+    <%= render partial: "student", locals: {student: student}%>
+  <%end%>
+<%end%>
