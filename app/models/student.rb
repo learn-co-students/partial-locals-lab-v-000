@@ -16,10 +16,8 @@ class Student < ActiveRecord::Base
 
   def self.search(student_name)
     if student_name == ''
-      binding.pry
       @students = Student.all
     else
-      binding.pry
       @students = Student.where('name LIKE ?', "%#{student_name}%").all
     end  
   end
