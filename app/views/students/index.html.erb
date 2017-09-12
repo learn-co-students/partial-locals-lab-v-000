@@ -1,0 +1,13 @@
+<%= form_tag('/search', method: 'get') do %>
+	<%= label_tag :q, 'Search name:' %>
+	<%= text_field_tag :q, params[:q] %>
+	<%= submit_tag("Search") %>
+<% end %>
+
+<% if @students.length == 0 %>
+	<h3>Not found.</h3>
+<% else %>
+	<% @students.each do |student| %>
+		<%= render partial: 'student', locals: {student: student} %>
+	<% end %>
+<% end %>
