@@ -4,7 +4,7 @@ Classroom Info
 <%= @classroom.semester %>
 </p>
 
-We now want to call out the all students in the class:
+We now want to show all students in the class:
 <% @classroom.students.each do |student_info|
   <%= render partial: "students/student", locals: {student: student_info} %>
 <% end %>
