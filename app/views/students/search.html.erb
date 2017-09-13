@@ -1,0 +1,4 @@
+We now want to show the named student:
+<% @students.each do |student_info|
+  <%= render partial: "students/student", locals: {student: student_info} %>
+<% end %>
