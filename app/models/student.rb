@@ -16,7 +16,7 @@ class Student < ActiveRecord::Base
 
   def self.search(name)
     name.empty? ? self.all : self.all.select do |s|
-      !s.name.downcase.scan(/#{name}/).empty?
+      !s.name.downcase.scan(/#{name.downcase}/).empty?
     end
   end
 
