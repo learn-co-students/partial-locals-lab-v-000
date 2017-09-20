@@ -13,4 +13,11 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(name)
+    name.empty? ? self.all : self.all.select do |s|
+      !s.name.downcase.scan(/#{name}/).empty?
+    end
+  end
+
 end
