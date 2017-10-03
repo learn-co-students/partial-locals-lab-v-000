@@ -21,10 +21,15 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    if params[:name].present?
+     @students = Student.search(params[:name])
+     # SELECT * FROM students WHERE name LIKE %rob%
+   else
+     @students = Student.all
+   end
   end
 
   def student_params
-    params.require(:student).permit(:name, :birthday, :hometown)
+    params.require(:student).permit(:name, :birthday, :hometown, :query)
   end
 end
