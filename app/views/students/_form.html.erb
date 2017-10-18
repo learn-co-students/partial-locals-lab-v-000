@@ -1,4 +1,5 @@
-<%= form_for @student do |f|%>
+<%= form_for student do |f|%> 
+<!-- changing this from @student to accept the the argument to the form_for helper as a local -->
 <p>
   <%= f.label :name %>
   <%= f.text_field :name %>
