@@ -1,3 +1,9 @@
+<h2>Search for students here:</h2>
+<%= form_tag(students_search_path, :method => "post") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search By Name" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <ul>
   <% @students.each do |student| %>
     <li>
