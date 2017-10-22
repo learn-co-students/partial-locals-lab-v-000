@@ -16,15 +16,14 @@ class Student < ActiveRecord::Base
 
   def self.search(query)
     if !query.empty?
-      @students = []
-      self.all.each do |student|
-      @students << student if student.name.downcase.include?query.downcase
-      end
-      @students
+      self.all.collect do |student|
+      student if student.name.downcase.include?query.downcase
+    end.compact
     else
       self.all
     end
   end
+
   #
   # def self.search(query)
   #   if query.present?
