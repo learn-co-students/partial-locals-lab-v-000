@@ -1,0 +1,7 @@
+<ul>
+  <% @students.each do |student| %>
+    <li>
+      <%= render 'student', student: student %>
+    </li>
+  <% end %>
+</ul>
