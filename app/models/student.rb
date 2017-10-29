@@ -18,16 +18,7 @@ class Student < ActiveRecord::Base
     if student_name.empty?
       Student.all
     else
-      found_student = Student.where("name = student_name")
-    end
-  end
-
-      #if search is empty
-      #return all students
-      #else
-      #return specific student
-
-
+      found_student = Student.where("name = 'student_name'")
     end
   end
 
