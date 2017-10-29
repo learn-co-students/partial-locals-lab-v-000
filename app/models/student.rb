@@ -15,5 +15,20 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(student_name)
+    if student_name.empty?
+      Student.all
+    else
+      found_student = Student.where("name = student_name")
+    end
   end
+
+      #if search is empty
+      #return all students
+      #else
+      #return specific student
+
+
+    end
+  end
+
 end
