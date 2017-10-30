@@ -1,4 +1,13 @@
 <%= form_for(student) do |f|%>
+<%#https://apidock.com/rails/ActionView/Helpers/FormHelper/form_for%>
+<%#Resource-oriented style%>
+<%#First, the prefix used to name the input elements within the form
+(hence the key that denotes them in the params hash)
+is actually derived from the object’s class, e.g.
+params[:post] if the object’s class is Post. %>
+<%#http://api.rubyonrails.org/v5.1/classes/
+ActionView/Helpers/FormHelper.html#method-i-form_for %>
+<%#That's how you typically work with resources.%>
 <p>
   <%= f.label :name %>
   <%= f.text_field :name %>

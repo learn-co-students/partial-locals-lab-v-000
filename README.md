@@ -31,3 +31,5 @@ Second, they also want to add some search functionality so that a user can searc
 5. Add in search functionality such that users can search for a student by name and see all matching results on the students index page. The results should be displayed by rendering a `students/_student.html.erb` partial.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/partial-locals-lab'>Partial with Locals Lab</a> on Learn.co and start learning to code for free.</p>
+#http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormHelper.html
+#http://railscasts.com/episodes/217-multistep-forms?view=asciicast

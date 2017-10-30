@@ -17,4 +17,6 @@ class Student < ActiveRecord::Base
   def self.search(search)
     where("name LIKE ?", "%#{search}%")
   end
+  #keyword "search form_tag ruby on rails api"
+  #http://www.rymcmahon.com/articles/2
 end
