@@ -16,11 +16,20 @@ class Student < ActiveRecord::Base
 
   def self.search(name)
     if name.empty?
-      @students = Student.all
+      Student.all
     else
-      @students = Student.all.select do |student|
+      Student.all.select do |student|
         /#{name}/i.match(student.name)
       end
     end
   end
+
+  # def self.search(query)
+  #   if query.present?
+  #     where('NAME like ?', "%#{query}%")
+  #   else
+  #     self.all
+  #   end
+  # end
+
 end
