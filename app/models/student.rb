@@ -13,4 +13,16 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(sname)
+   @students = []
+   
+   Student.all.each do |nom|
+     if nom.name.downcase.include?(sname)
+       @students << nom
+     end
+   end
+   @students
+ end
+
 end
