@@ -182,7 +182,6 @@ DEPENDENCIES
   jquery-rails
   pry-byebug
   rails (= 4.2.5)
-  rake (~> 10.4)
   rspec-rails (>= 2.0.0.beta)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
