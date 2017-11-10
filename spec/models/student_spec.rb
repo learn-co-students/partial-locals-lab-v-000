@@ -22,4 +22,4 @@ RSpec.describe "Student" do
       end
     end
   end
-end
+end  
