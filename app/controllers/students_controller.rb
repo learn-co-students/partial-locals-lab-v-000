@@ -16,13 +16,22 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+  def search
+    # byebug
+    Student.search(params[:name])
+    redirect_to students_path
+  end
+
   def show
     @student = Student.find(params[:id])
   end
 
   def index
     @students = Student.all
+    @search_results = Student.search_results
   end
+
+
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
