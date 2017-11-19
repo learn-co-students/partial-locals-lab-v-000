@@ -1,11 +1,13 @@
 class StudentsController < ApplicationController
   def new
+  #  binding.pry
     @student = Student.new
   end
 
   def create
-    @student = Student.new(student_params)
+  @student = Student.new(student_params)
     if @student.save
+       binding.pry
       redirect_to @student
     else
       render 'new'
