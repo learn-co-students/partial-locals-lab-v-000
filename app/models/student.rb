@@ -16,12 +16,10 @@ class Student < ActiveRecord::Base
 
   def self.search(term)
     return self.all if term.empty?
-    found = self.all.collect do |student|
-      if student.name.include?(term)
+    self.all.collect do |student|
+      if student.name.downcase.include?(term.downcase)
         student
       end
-    end
-    binding.pry
-    found
+    end.compact
   end
 end
