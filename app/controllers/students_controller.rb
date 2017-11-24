@@ -13,18 +13,24 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    @student = Student.find(params[:id])
+    current_student
   end
 
   def show
-    @student = Student.find(params[:id])
+    current_student
   end
 
   def index
     @students = Student.all
   end
 
+  private
+
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
+  end
+
+  def current_student
+    @student = Student.find(params[:id])
   end
 end
