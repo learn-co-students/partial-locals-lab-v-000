@@ -17,11 +17,15 @@ class StudentsController < ApplicationController
   end
 
   def show
+
     @student = Student.find(params[:id])
   end
 
   def index
-    @students = Student.all
+    if params[:search] == nil
+      params[:search] = ""
+    end
+    @students = Student.search(params[:search])
   end
 
   def student_params
