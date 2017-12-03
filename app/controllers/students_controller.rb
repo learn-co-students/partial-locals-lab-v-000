@@ -1,9 +1,11 @@
 class StudentsController < ApplicationController
+
   def new
     @student = Student.new
   end
 
   def create
+    raise params.inspect
     @student = Student.new(student_params)
     if @student.save
       redirect_to @student
@@ -21,7 +23,7 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    @students = Student.search(params[:search])
   end
 
   def student_params
