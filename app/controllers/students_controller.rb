@@ -21,7 +21,16 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+  end
+
+  def search
+    if params[:student_name] = ''
+      @students = Student.all
+      redirect_to students_path(@students)
+    else
+      @students = Student.where(name: params[:student_name])
+      redirect_to students_path(@students)
+    end
   end
 
   def student_params
