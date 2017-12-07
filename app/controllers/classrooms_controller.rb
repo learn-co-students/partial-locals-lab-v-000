@@ -2,7 +2,7 @@
 class ClassroomsController < ApplicationController
   def show
     @classroom = Classroom.find(params[:id])
-    @student = @classroom.oldest_student
+    # @student = @classroom.oldest_student
   end
 
   def index
