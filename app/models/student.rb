@@ -17,9 +17,9 @@ class Student < ActiveRecord::Base
 
   def self.search(student_name)
     if student_name.blank?
-      Student.all
+      self.all
     else
-      @students = Student.all.where("name LIKE ? OR ?", "%#{student_name.downcase}%", "#{student_name.capitalize}%")
+      Student.all.where("name LIKE ? OR ?", "%#{student_name.downcase}%", "#{student_name.capitalize}%")
     end
   end
   
