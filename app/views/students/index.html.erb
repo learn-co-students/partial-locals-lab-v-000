@@ -1,0 +1,11 @@
+<%= form_tag(students_search_path, method:"POST") do %>
+    <%=label_tag "name"%>
+    <%= text_field_tag "name" %><br>
+
+    <%= submit_tag "Search for student"%>
+<%end%>
+
+
+<% @students.each do |student| %>
+    <%= render partial: 'student', locals: {student: student} %>
+<%end%>
