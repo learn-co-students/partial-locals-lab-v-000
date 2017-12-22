@@ -21,7 +21,9 @@ class StudentsController < ApplicationController
   end
 
   def index
+    #raise Exception.new(params)
     @students = Student.all
+    #raise Exception.new(@students[0].name)
   end
 
   def student_params
