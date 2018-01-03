@@ -1,6 +1,6 @@
 <h1>Students:</h1>
 
-<%= form_tag students_path do %>
+<%= form_tag students_path, method: "get" do %>
 <p>
   <%= text_field_tag :search, nil, placeholder: 'Enter your search query here' %>
   <%= submit_tag "Search"%>
