@@ -1,0 +1,5 @@
+<h1>All classrooms</h1>
+
+<% @classrooms.each do |classroom| %>
+  <%= link_to (render partial: 'classroom', locals: {classroom: classroom}), classroom_path(classroom.id) %>
+<% end %>
