@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+
+  
   def new
     @student = Student.new
   end
@@ -19,9 +21,9 @@ class StudentsController < ApplicationController
   def show
     @student = Student.find(params[:id])
   end
-
+  
   def index
-    @students = Student.all
+    @students = Student.search(params[:q])
   end
 
   def student_params
