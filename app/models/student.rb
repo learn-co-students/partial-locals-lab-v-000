@@ -13,4 +13,12 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(student_name)
+    if student_name.empty?
+      Student.all
+    else
+      Student.all.collect {|s| s if s.name.match(/#{student_name}/i)}.compact!
+    end
+  end
 end
