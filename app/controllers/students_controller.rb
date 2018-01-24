@@ -1,7 +1,9 @@
+require "pry"
 class StudentsController < ApplicationController
   def new
     @student = Student.new
   end
+
 
   def create
     @student = Student.new(student_params)
@@ -22,6 +24,8 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    @student = Student.search(params[:name])
+
   end
 
   def student_params
