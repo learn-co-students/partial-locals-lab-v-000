@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+
   def new
     @student = Student.new
   end
@@ -21,10 +22,19 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    if params[:search]
+      @students = Student.search(params[:search])
+    else
+      @students= Student.all
+    end
+  end
+
+  def search
+    redirect_to students_path(:search => params[:search])
   end
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
   end
+
 end
