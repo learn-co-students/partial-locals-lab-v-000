@@ -1,6 +1,8 @@
+
 class StudentsController < ApplicationController
+  
   def new
-    @student = Student.new
+    @student= Student.new
   end
 
   def create
@@ -21,9 +23,25 @@ class StudentsController < ApplicationController
   end
 
   def index
+    @student = Student.new(name: "name to search for")
     @students = Student.all
   end
 
+  def search
+   
+    @students=Student.search(params["name"])
+   
+    if @students != []
+     
+      render 'index'
+    else
+      @students = Student.all
+      
+      render 'index'
+    end
+    
+  end
+  
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
   end
