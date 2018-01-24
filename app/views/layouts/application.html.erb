@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<%= form_tag students_path, :method => :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search for student" %>
+
+  <%= submit_tag "Search", name: nil %>
+<% end %>
+<hr><br>
 <%= yield %>
 
 </body>
