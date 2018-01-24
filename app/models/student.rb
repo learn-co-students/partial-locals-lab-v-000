@@ -13,4 +13,23 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(query)
+    if query == ''
+      Student.all
+    else
+      result = []
+      Student.all.each do |stud|
+        if stud.name.downcase.include?(query.downcase)
+          result << stud
+        end
+      end
+
+      if result.size > 0
+        result
+      else
+        "Student Not Found"
+      end
+    end
+  end
 end
