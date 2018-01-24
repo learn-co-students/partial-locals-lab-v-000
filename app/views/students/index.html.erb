@@ -1,0 +1,20 @@
+<%= form_tag(students_path, :method => "get", id: "search-form") do%>
+<%#keyword "search form_tag ruby on rails api"
+<%#http://www.rymcmahon.com/articles/2 %>
+<%#= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+    <%#= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+    <%#= submit_tag "Search", :name => nil %>
+<%# end %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Students"%>
+<%#text_field_tag 'search', nil, placeholder: 'Enter search term...'
+# => <input id="search" name="search" placeholder="Enter search term..." type="text" />
+<%#http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormTagHelper.html#method-i-text_field_tag %>
+<%= submit_tag "search" %>
+<% end %>
+
+<% @students.each do |student| %>
+<%= render partial: 'student', locals: {student: student} %>
+<%#<%= render partial: "account", locals: { account: @buyer } %>
+<%#This would first render “advertiser/_account.html.erb” with @buyer passed in as the local variable account, %>
+<%#http://api.rubyonrails.org/v5.1/classes/ActionView/PartialRenderer.html %>
+<% end %>
