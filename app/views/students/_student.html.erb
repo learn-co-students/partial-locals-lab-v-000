@@ -1,11 +1,17 @@
 <ul>
   <li>
-    Name: <%= @student.name %>
+    Name: <%= student.name %>
   </li>
   <li>
-    Birthday: <%= @student.birthday.strftime("%m/%d/%Y")  %>
+    <% if student.birthday %>
+      Birthday: <%= student.birthday.strftime("%m/%d/%Y")  %>
+    <% end %>
   </li>
   <li>
-    Hometown: <%= @student.hometown.capitalize %>
+    <% if student.hometown %>
+      Hometown: <%= student.hometown.capitalize %>
+    <% end %>
   </li>
 </ul>
+
+
