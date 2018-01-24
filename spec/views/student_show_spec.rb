@@ -14,7 +14,7 @@ RSpec.describe "show_view" do
     view.lookup_context.prefixes = %w[students]
     assign(:student, student)
     render :template => "students/show.html.erb"
-    expect(rendered).to render_template(:partial => "student", locals: {student: student})
+    expect(rendered).to render_template(:partial => "_student", locals: {student: student})
   end
 
   it "displays the student information from the partial" do
