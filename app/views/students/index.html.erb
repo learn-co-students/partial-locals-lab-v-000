@@ -1,0 +1,29 @@
+<%= form_tag students_path, :method => "get" do %>
+  <p>
+    <%= text_field_tag :search, params[:search], placeholder: "Search students..." %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+
+
+<!--
+The best resources to understand how to set up a simple search form are:
+- http://www.korenlc.com/creating-a-simple-search-in-rails-4/
+- http://railscasts.com/episodes/37-simple-search-form
+
+Regarding rendering the search results, I was initially using the partial to
+render a collection (which works) but, apparently, the tests wanted me to pass
+in a local variable.
+
+The _student.html.erb partial rendering a collection would look like (in erb):
+render partial: 'student', collection: @students
+-->
+
+<% if @students.present? %>
+  <% @students.each do |student| %>
+    <%= render partial: 'student', locals: {student: student} %>
+  <% end %>
+<% else %>
+  <p>There are no students matching "<%= params[:search] %>".</p>
+<% end %>
