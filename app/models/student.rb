@@ -13,4 +13,12 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(search_term)
+    if search_term != ""
+      Student.all.select {|student| student["name"].start_with?(search_term.capitalize)}
+    else
+      self.all
+    end
+  end
 end
