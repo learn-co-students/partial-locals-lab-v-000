@@ -13,4 +13,9 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(query_name)
+    self.all.select { |s| s.name =~ /#{query_name}/i }
+  end
+
 end
