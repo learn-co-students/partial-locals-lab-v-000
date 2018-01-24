@@ -13,4 +13,14 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(term)
+  	if !term.empty?
+  		all.select {|s| s.name.downcase.include?("#{term.downcase}")}
+  	else
+  		all
+  	end
+  	
+  end
 end
+
