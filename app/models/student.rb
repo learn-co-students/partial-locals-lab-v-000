@@ -13,4 +13,15 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+  validates :name, presence: true
+  validates :hometown, presence: true
+  validates :birthday, presence: true
+
+  def self.search(term)
+    if term.present? #if term is not blank
+      self.where("name LIKE ?", "%#{term}%" ) #record name contains 'term' anywhere in it
+    else
+      self.all
+    end
+  end
 end
