@@ -1,0 +1,11 @@
+<h1>Students</h1>
+
+<%= form_tag students_path, method: "get" do  %>
+  <%= text_field_tag :search_term, params[:search_term] %>
+  <%= submit_tag "Search Students" %>
+<% end %>
+<% if @students %>
+  <% @students.each do |student| %>
+    <%= render partial: 'student', locals: {student: student} %>
+  <% end %>
+<% end %>
