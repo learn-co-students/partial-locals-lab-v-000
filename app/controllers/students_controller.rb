@@ -21,10 +21,13 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+#    @students = Student.all
+  @students = Student.search(q)
   end
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
   end
+
+
 end
