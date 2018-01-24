@@ -13,4 +13,9 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(value)
+    self.all if value == ""
+    self.where("name LIKE :prefix", prefix: "#{value}%")
+  end
 end
