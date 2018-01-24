@@ -21,9 +21,18 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    @students = Student.search(params[:name])
+    #@students.each do |std| render partial: 'students/student', locals: {student: std} end
   end
 
+  def update
+    @student = Student.find(params[:id])
+    if @student.update(student_params)
+      redirect_to student_path(@student)
+    else
+      render :edit
+    end
+  end
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
   end
