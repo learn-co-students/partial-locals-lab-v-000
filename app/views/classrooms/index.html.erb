@@ -1,0 +1,4 @@
+<h2>Classrooms</h2>
+<% @classrooms.each do |i| %>
+  <%= render :partial => "classroom", locals: {classroom: i} %>
+<% end %>
