@@ -1,0 +1,10 @@
+<h1>Matching students</h1>
+<ul>
+    <% Student.all.each do |student| %>
+    <li>
+        <ul>
+        <%= render partial: 'student', locals: {student: student} %>
+        </ul>
+    </li>
+    <% end %>
+</ul>
