@@ -27,13 +27,10 @@ class StudentsController < ApplicationController
     #@students = Student.all.count
     #@students = Student.search.count
     #@students = Student.search.all.count
+    binding.pry
     @students = Student.where(:name)
       students/_student.html.erb
   end
-
-  #def search
-    #@students = Student.all.count
-  #end
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
