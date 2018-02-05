@@ -17,7 +17,6 @@ class StudentsController < ApplicationController
   end
 
   def show
-    binding.pry
     @student = Student.find(params[:id])
   end
 
@@ -28,9 +27,8 @@ class StudentsController < ApplicationController
     #@students = Student.all.count
     #@students = Student.search.count
     #@students = Student.search.all.count
-    binding.pry
-    @students = Student.where(:name)
-      students/_student.html.erb
+    @students = Student.all#Student.where(:name)
+      #students/_student.html.erb
   end
 
   def student_params

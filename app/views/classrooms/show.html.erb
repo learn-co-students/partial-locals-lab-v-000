@@ -4,5 +4,7 @@ Classroom Info
 </p>
 
 We now want to call out the oldest student in the class:
-<!--%= render 'students/student' %-->
-<%= render partial: "students/student", locals: {post_student: @student} %>
+<% @students.each do |student| %>
+<%= render partial: "students/student", locals: {student: student} %>
+<% end %>
+<!--render :template => "classrooms/show.html.erb"-->
