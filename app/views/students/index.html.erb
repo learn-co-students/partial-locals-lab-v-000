@@ -1,0 +1,24 @@
+ 
+
+<% form_for @students do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<% f.submit %>
+<% end %>
+
+<% @students.each do |student| %>
+	
+	Student.search(student).map {|s| s.name).to match_array }
+
+
+
+
+	<%= render partial: 'student', locals: {student: @student} %>
+<% end %>
+
+
+<%= form_tag(students, method: :get) do %>
+	<%= text_field_tag :term params[:term]%>
+	<%= submit_tag 'Search', name: nil %>
+<% end %>
+
