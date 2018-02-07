@@ -21,12 +21,23 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
-    @student = Student.search(params[:term])
+    @students = Student.search(params[:term])
+    
+    # # @student = Student.search(params[:term])
+    # @students = Student.all
+      # if params[:term]
+      #   @students = Student.search(params[:term])
+      # else 
+      #   @students = Student.all
+      # end 
+   #ask for help on this. 
   end
 
-  def student_params
-    params.require(:student).permit(:name, :birthday, :hometown, :term)
 
+ # could be:     .order("created_at DESC")
+
+
+  def student_params
+    params.require(:student).permit(:name, :birthday, :hometown)
   end
 end

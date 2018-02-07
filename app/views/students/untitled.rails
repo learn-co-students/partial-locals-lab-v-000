@@ -1,0 +1,3 @@
+notes.md
+	
+		Student.search(student).map {|s| s.name).to match_array }
