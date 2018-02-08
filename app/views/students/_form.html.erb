@@ -2,14 +2,23 @@
 <p>
   <%= f.label :name %>
   <%= f.text_field :name %>
+
+    <%= @student.name %>
+
 </p>
 <p>
   <%= f.label :hometown %>
   <%= f.text_field :hometown %>
+
+      <%= @student.hometown %>
+
 </p>
 <p>
   <%= f.label :birthday %>
   <%= f.date_field :birthday %>
+
+    <%= @student.birthday %>
+  
 </p>
   <%= f.submit %>
 <% end %>
