@@ -2,7 +2,10 @@ Classroom Info
 <p>
 <%= render partial: "classrooms", locals: {classroom: @classroom} %>
 
-<% @classroom.students.each do |student| %>
+
   <%= render partial: "students/student", locals: {student: student} %>
 <% end %>
+
+
+  expect(rendered).to include(student.name)
 </p>
