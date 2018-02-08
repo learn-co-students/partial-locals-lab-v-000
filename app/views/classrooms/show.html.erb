@@ -1,20 +1,8 @@
 Classroom Info
 <p>
 <%= render partial: "classrooms", locals: {classroom: @classroom} %>
-<!--%= render partial: "classrooms", locals: {classroom: @classroom.course_name} %-->
-</p>
 
-We now want to call out the oldest student in the class:
-Classroom Info
-<p>
 <% @classroom.students.each do |student| %>
-  <!--%= render partial: "classrooms", locals: {classroom: @classroom.course_name} %-->
   <%= render partial: "students/student", locals: {student: student} %>
 <% end %>
-
-<!--%= render partial: "classrooms/show", locals: {student: student} %>
-< it "renders classroom information on the show view" do
-    view.lookup_context.prefixes = %w[students, classrooms]
-    student = Student.create(name: 'Bobby', hometown: Faker::Address.city, birthday: Faker::Date.between(25.years.ago, 18.years.ago))
-    assign(:classroom, classroom)
-    render :template => "classrooms/show.html.erb"-->
+</p>
