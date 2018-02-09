@@ -1,26 +1,17 @@
 <%= form_for @student do |f|%>
-<!--%= form_tag student_path(@student), method: "put" do %-->
-<!--%= form_for (@student), method: "patch"%-->
-<!--%= form_for (@student) do |f|%-->
 <p>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <!--%= f.text_field :name, @student.name %-->
-  <!--%= f.text_field_tag :name, @student.name %-->
 </p>
 
 <p>
   <%= f.label :hometown %>
   <%= f.text_field :hometown %>
-  <!--%= f.text_field :hometown, @student.hometown %-->
-  <!--%= f.text_field_tag :hometown, @student.hometown %-->
 </p>
 
 <p>
   <%= f.label :birthday %>
   <%= f.date_field :birthday %>
-  <!--%= f.date_field :birthday, @student.birthday %-->
-  <!--%= f.date_field_tag :birthday, @student.birthday %-->
 </p>
   <%= f.submit %>
 <% end %>
