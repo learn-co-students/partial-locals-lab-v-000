@@ -1,0 +1,11 @@
+<h1> Search for a student in our database:</h1>
+
+<%= form_tag :students, :method => 'get' do %>
+   <%= label_tag :student_name, "Student Name" %>
+   <%= text_field_tag :student_name %>
+   <%= submit_tag "Search" %>
+<% end %>
+
+<% @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
+<% end %>
