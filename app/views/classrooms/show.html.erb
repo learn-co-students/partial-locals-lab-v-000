@@ -1,8 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
 Classroom Info
 <p>
 <%= @classroom.course_name %>
 <%= @classroom.semester %>
 </p>
 
-We now want to call out the oldest student in the class:
-<%= render 'students/student' %>
+<% render partial: "classroom" %>
+
+<% @classroom.students.each do |student| %>
+  <%= render partial: "students/student", locals:{student: student} %>
+<% end %>
+
+</body>
+</html>
