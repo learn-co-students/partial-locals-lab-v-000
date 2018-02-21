@@ -18,7 +18,7 @@ RSpec.describe "Student" do
 
     context 'when it receives a search query' do
       it 'returns all students whose names contain the given string' do
-        expect(Student.search('rob').map {|s| s.name}).to match_array(['Robert', 'Roberta'])
+        expect(Student.search('sh').map {|s| s.name}).to match_array(['Shirley', 'Shelby'])
       end
     end
   end
