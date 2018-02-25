@@ -1,6 +1,6 @@
 <ul>
   <li>
-    Name: <%= student.name %>
+    Name: <%= link_to student.name, student_path(student) %>
   </li>
   <li>
     Birthday: <%= student.birthday.strftime("%m/%d/%Y")  %>
