@@ -1,4 +1,5 @@
 require "rails_helper"
+require 'pry'
 
 RSpec.describe "Student" do
   describe 'search' do
