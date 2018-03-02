@@ -1,12 +1,12 @@
 Classroom Info
 
-<%= render partial: 'classroom', locals: {classroom: @classroom} %>
+<%= render 'classroom', classroom: @classroom %>
 
 Every Student in the class:
 <ul>
   <% @classroom.students.each do |student| %>
   <li>
-<%= render partial: 'students/student', locals: {student: student} %>
+<%= render 'students/student', student: student %>
 </li>
 
 <% end %>
