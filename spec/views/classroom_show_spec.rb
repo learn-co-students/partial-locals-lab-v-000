@@ -38,7 +38,9 @@ RSpec.describe "classroom_show_view" do
   it "displays the student information from the partial" do
     view.lookup_context.prefixes = %w[students, classrooms]
     assign(:classroom, classroom)
+#binding.pry
     render :template => "classrooms/show.html.erb"
+
     expect(classroom.students.count).to eq 5
     classroom.students.each do |student|
       expect(rendered).to include(student.name)
