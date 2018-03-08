@@ -1,4 +1,12 @@
-<% form_tag(students_path) do %>
-  <%= text_field_tag :student %>
-  <%= submit_tag "Search" %>
+<%= form_tag students_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
+<!-- rails search http://railscasts.com/episodes/37-simple-search-form/ -->
+
+<% @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
 <% end %>
