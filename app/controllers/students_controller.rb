@@ -3,6 +3,9 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
 
+  def search
+  end 
+
   def create
     @student = Student.new(student_params)
     if @student.save
