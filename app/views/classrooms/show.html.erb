@@ -3,4 +3,6 @@ Classroom Info
 <% @students.each do |student| %>
 <%= student.course %>
 <%= student.name %>
+
+<%= render partial: "students/student", locals: {student: @student} %>
 <% end %>
