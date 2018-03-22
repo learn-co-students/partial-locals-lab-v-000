@@ -1,0 +1,6 @@
+<%= render partial: "students/student", locals: {classroom_student: @student} %>
+<% @students.each do |student| %>
+<%= @student.name %>
+<%= @student.hometown %>
+<%= @student.birthday %>
+<%= end %>
