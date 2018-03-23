@@ -1,0 +1,15 @@
+<%= form_tag students_path, method: :get do %>
+  Student <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+
+<% if @results.present? %>
+  <% @results.each do |student| %>
+    <%= render partial: "student", locals: {student: student} %>
+  <% end %>
+<% else %>
+  <% Student.all.each do |student| %>
+    <%= render partial: "student", locals: {student: student} %>
+  <% end %>
+<% end %>

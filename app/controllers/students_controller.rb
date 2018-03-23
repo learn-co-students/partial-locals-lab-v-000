@@ -12,6 +12,8 @@ class StudentsController < ApplicationController
     end
   end
 
+
+
   def edit
     @student = Student.find(params[:id])
   end
@@ -21,7 +23,9 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    if params[:search]
+      @results = Student.search (params[:search])
+    end
   end
 
   def student_params
