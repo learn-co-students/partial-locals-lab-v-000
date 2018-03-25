@@ -1,0 +1,13 @@
+<h3>Search for a Student</h3>
+
+<%= form_tag students_path, method: :get do %>
+  Name: <%= text_field_tag :search_input %><br>
+
+  <%= submit_tag "Search" %>
+<% end %>
+
+<ul>
+  <%= @results.each do |student| %>
+    <li><%= student.name %></li>
+  <% end %>
+</ul>
