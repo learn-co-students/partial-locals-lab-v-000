@@ -23,17 +23,14 @@ class StudentsController < ApplicationController
   end
 
   def index
+    # binding.pry
     @results = Student.all
-    if params[:search_input] == nil || params[:search_input] == ""
-      render 'index'
-    else
-      # params[:search_input] != "" && params[:search_input] != nil
-      @results = Student.search(params[:search_input])
-      # if @results == nil
-      #   @results = Student.all
-      # end
-      render 'index'
-    end
+    # if params[:search_input] == nil || params[:search_input] == ""
+    #   render 'students/index'
+    # else
+      # @results = Student.search(params[:search_input])
+      # render 'index'
+    # end
   end
 
   def student_params
