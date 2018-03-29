@@ -5,6 +5,6 @@ Classroom Info
 Students
 <ul>
   <% @classroom.students.each do |student| %>
-    <li><%= render partial: 'students/student', locals: {class_student: student} %></li>
+    <li><%= render partial: 'students/student', locals: {student: student} %></li>
   <% end %>
 </ul>
