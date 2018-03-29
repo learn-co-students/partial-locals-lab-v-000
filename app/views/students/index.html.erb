@@ -1,0 +1,11 @@
+<h1>Student - Index</h1>
+<%= form_tag "students", method: :get do %>
+  <%= label_tag :query, "Search by name:" %>
+  <%= text_field_tag :query %>
+  <%= submit_tag "Search" %>
+<% end %>
+<ul>
+  <% @students.each do |student| %>
+    <fieldset><%= render "student", student: student %></fieldset>
+  <% end %>
+</ul>
