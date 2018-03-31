@@ -1,0 +1,17 @@
+<form class="" action="/students/search" method="post">
+  <div>
+    <label for="">Search Students</label><br>
+    <input type="search" id="search" name="student[name]">
+    <input type="submit" name="" value="Search">
+  </div>
+</form>
+
+<%if @results%>
+  <%@results.each do |student|%>
+  <%=render partial: 'student', locals: {student: student}%>
+  <%end%>
+<%else%>
+  <%Student.all.each do |student|%>
+  <%=render partial: 'student', locals: {student: student}%>
+  <%end%>
+<%end%>

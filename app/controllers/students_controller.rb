@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
   def new
     @student = Student.new
   end
@@ -10,6 +12,12 @@ class StudentsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def search
+    #raise params.inspect
+    @results = Student.search(search_params[:name])
+    render :index
   end
 
   def edit
@@ -26,5 +34,9 @@ class StudentsController < ApplicationController
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
+  end
+
+  def search_params
+    params.require(:student).permit(:name)
   end
 end
