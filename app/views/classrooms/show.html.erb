@@ -6,3 +6,9 @@ Classroom Info
 
 We now want to call out the oldest student in the class:
 <%= render 'students/student' %>
+<% binding.pry %>
+All the students:
+<% @classroom.students.each do |student| %>
+
+  <%= render 'students/student' %>
+  <% end %>
