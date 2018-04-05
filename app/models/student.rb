@@ -6,11 +6,10 @@ class Student < ActiveRecord::Base
   def self.search(name)
 
     if name.empty?
-      @students = Student.all
+      self.all
     else
-       @students = Student.all.select {|student| student.name.include?(name.capitalize)}
+       Student.all.select {|student| student.name.include?(name.capitalize)}
      end
-     @students
   end
 end
 
