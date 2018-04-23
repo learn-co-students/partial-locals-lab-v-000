@@ -5,10 +5,8 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    if @student.save
-      redirect_to @student
-    else
-      render 'new'
+    if @student.save then redirect_to @student
+    else render 'new'
     end
   end
 
@@ -22,6 +20,11 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+  end
+  
+  def search
+    @students = Student.search(student_params[:name])
+    render 'index'
   end
 
   def student_params
