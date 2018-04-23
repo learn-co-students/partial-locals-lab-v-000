@@ -1,0 +1,16 @@
+<% @student = Student.new %>
+<%= form_for(@student, url: {controller: 'students', action: 'search'}) do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit 'Search' %>
+  </p>
+<% end %>
+
+<br/>
+
+<% @students.each do |student| %>
+  <% unless student.nil? %>
+    <%= render partial: 'student', locals: {student: student} %>
+  <% end %>
+<% end %>
