@@ -27,4 +27,9 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
   end
+
+  def search 
+    @student = Student.find_by(name: params[:search])
+    redirect_to student_path(@student)
+  end
 end
