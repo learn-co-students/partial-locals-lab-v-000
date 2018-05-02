@@ -21,15 +21,11 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    @students = Student.search(params[:search])
   end
 
   def student_params
-    params.require(:student).permit(:name, :birthday, :hometown)
+    params.require(:student).permit(:name, :birthday, :hometown, :search)
   end
 
-  def search 
-    @student = Student.find_by(name: params[:search])
-    redirect_to student_path(@student)
-  end
 end
