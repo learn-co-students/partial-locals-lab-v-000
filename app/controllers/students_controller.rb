@@ -21,8 +21,16 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    binding.pry
+    @students = Student.search(params[:q])
+    render 'index'
   end
+
+  # def index
+  #   @q = self.ransack(params[:q])
+  #   @students = @q.result(distinct: true)
+  # end
+
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
