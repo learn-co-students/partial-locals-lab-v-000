@@ -1,0 +1,7 @@
+<%= form_for(@students) do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+<% end %>
+
+
+<!-- <%= render partial: 'student', locals: {students: Student.search(student_name)} %> -->
