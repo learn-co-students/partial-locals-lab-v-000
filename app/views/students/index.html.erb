@@ -2,3 +2,6 @@
   <%= text_field_tag :search, params[:search], placeholder: "Search Students" %>
   <%= submit_tag "Search", :name => nil %>
 <% end %>
+<% @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
+<% end %>
