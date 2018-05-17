@@ -21,7 +21,9 @@ class StudentsController < ApplicationController
   end
 
   def index
-    #binding.pry
+    #when in doubt..put the logic in the MODEL!
+    #in the search method (held in the model) we use conditional logic to render the partial only if params exists. If not, then we set @students to all.
+
     @students = Student.search(params[:student][:name])
   end
 
