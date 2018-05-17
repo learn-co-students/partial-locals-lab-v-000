@@ -4,6 +4,7 @@
   <%= submit_tag "Search" %>
 <% end %>
 
+<!-- We iterate through the @students HERE because then we pass each individual student as a local. -->
 
 <% @students.each do |student| %>
 <%= render partial: 'student', locals: {student: student} %>
