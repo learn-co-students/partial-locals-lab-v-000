@@ -1,1 +1,3 @@
-<%= render 'form' %>
+<%= form_for @student do |student| %>
+	<%= render partial: 'form', locals: {student: @student} %>
+<% end %>
