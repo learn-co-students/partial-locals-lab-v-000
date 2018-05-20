@@ -1,1 +1,3 @@
-<%= render 'form' %>
+<!-- I need to make a local variable here that I can pass into my form -->
+<!-- Why is my form rendering blank? - It asked for my edit form not my new form -->
+<%= render partial: 'form', locals: {student: @student} %>

@@ -1,4 +1,10 @@
-<%= form_for @student do |f|%>
+<!-- How do I refactor this to take a local -->
+<!-- I changed @studnet to student and want to check the controller to see if there's
+another variable I should change it for.
+The test asked me to change student back to @student. I updated the local partial in my from
+but not sure why the tests are passing -->
+
+<%= form_for(student) do |f|%>
 <p>
   <%= f.label :name %>
   <%= f.text_field :name %>
