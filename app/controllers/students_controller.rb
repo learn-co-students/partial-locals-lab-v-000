@@ -24,6 +24,18 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  def search
+    @students = Student.search(params[:name])
+    render :index
+  end
+  ##solutoin did not do a search action, instead all was handed in index, so index looked like:
+  # def index
+  #   @students = Student.search(params[:query])
+  #   render 'index'
+  # end
+  #this way dont have to change anything in routes.rb like i did
+
+
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
   end
