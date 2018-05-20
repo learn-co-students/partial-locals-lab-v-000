@@ -1,11 +1,14 @@
+<!-- What do I need to change to make this work with locals? -->
+<!-- How do I iterate over the list of students -->
+
 <ul>
   <li>
-    Name: <%= @student.name %>
+    Name: <%= student.name %>
   </li>
   <li>
-    Birthday: <%= @student.birthday.strftime("%m/%d/%Y")  %>
+    Birthday: <%= student.birthday.strftime("%m/%d/%Y")  %>
   </li>
   <li>
-    Hometown: <%= @student.hometown.capitalize %>
+    Hometown: <%= student.hometown.capitalize %>
   </li>
 </ul>

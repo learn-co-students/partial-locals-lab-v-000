@@ -5,4 +5,8 @@ Classroom Info
 </p>
 
 We now want to call out the oldest student in the class:
-<%= render 'students/student' %>
+<%= render partial: 'students/student', locals: { student: @classroom.oldest_student } %>
+<%= render partial: 'classroom', locals: { classroom: @classroom} %>
+
+<!-- I need to use the join table to call the student from the classroom -->
+<!-- Nope, the above is wrong. I need to use the oldest student method from the classroom model -->

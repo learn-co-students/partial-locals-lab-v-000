@@ -1,0 +1,13 @@
+<!-- I need to show all the information about a classroom
+course_name
+semester
+I don't need to do the above
+
+All I needed to do is say the class name and list the students in the class.
+-->
+
+Class Name: <ul><li><%= classroom.course_name %></ul></li>
+
+Student Name: <% classroom.students.each do |student| %>
+<ul><li><%= student.name %></li></ul>
+<% end %>
