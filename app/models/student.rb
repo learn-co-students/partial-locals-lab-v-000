@@ -20,11 +20,11 @@ class Student < ActiveRecord::Base
    else
     q_names = []
     self.all.map do |s| 
-      # binding.pry
       if s.name.downcase.include? query 
         q_names << s
       end
     end
+    
     q_names
    end
 
