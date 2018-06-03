@@ -21,25 +21,10 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
-    Student.search(params[:search])
-    render 'index'
 
-
-    # if !params[:search].blank?
-    #    @students = Student.search('rob').map {|s| s.name} 
-    #    # if @student != nil
-    #    #   redirect_to student_path(@student)
-    #    # end
-    #  else
-    #   Student.all
-    # end
-
-
-    # if params[:search].blank?
-    #   @students = Student.all
-    #   redirect_to students_path
-    # end
+      @students = Student.search(params[:search])
+    
+      render 'index'
     
   end
 
