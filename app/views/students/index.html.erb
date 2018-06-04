@@ -1,0 +1,13 @@
+<h1>Student Index</h1>
+  <%= form_tag(students_path, method: 'get') do %>
+    <%= text_field_tag :search, params[:search], placeholder: 'Search Students' %>
+    <%= submit_tag "Search" %>
+  <% end %>
+
+<% if @students.present? %>
+  <% @students.each do |student| %>
+    <%= render partial: 'student', locals: { student: student } %>
+  <% end %>
+<% else %>
+  <h3> There are no students containing the term <%= params[:search] %>.</h4>
+<% end %>
