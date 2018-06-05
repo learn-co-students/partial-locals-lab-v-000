@@ -1,0 +1,4 @@
+<% @students.each do |student| %>
+<%= render partial: "student", locals: {student: student} %>
+<%#are locals really necessary here? Same for "classroom" in classrooms#show %>
+<% end %>

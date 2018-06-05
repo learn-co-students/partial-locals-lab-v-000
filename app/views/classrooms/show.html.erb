@@ -1,10 +1,12 @@
 Classroom Info
 <p>
-<%= @classroom.course_name %>
-<%= @classroom.semester %>
+<%= render partial: "classroom", locals: {classroom: @classroom} %>
 </p>
 
 List of students:
 
-
-<%= render partial: "students/student", locals: {student: @classroom.student} %>
+<% Student.all.each do |student| %>
+<%# <% @classroom.students do |student| %> %>
+<%= render partial: 'students/student', locals: {student: student} %>
+<%#student: in hash matches student in _student %>
+<% end %>
