@@ -1,0 +1,7 @@
+List of students:
+
+<% Student.all.each do |student| %>
+<%# <% @classroom.students do |student| %> %>
+<%= render partial: 'students/student', locals: {student: student} %>
+<%#student: in hash matches student in _student %>
+<% end %>
