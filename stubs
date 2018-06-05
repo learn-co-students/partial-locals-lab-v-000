@@ -1,0 +1,8 @@
+List of students:
+
+<%# <% students.each do |student| %> %>
+<%#students: this is like a value passed to a method ... i.e. students:
+refers to the locals hash in the render line in the show page  %>
+
+
+<%# <%= render partial: 'students/student', locals: {student: student} %> %>
