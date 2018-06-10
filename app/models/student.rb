@@ -17,4 +17,14 @@ class Student < ActiveRecord::Base
   def self.search(search)                           #found on Stack overflow. Not sure how this works
     where "name LIKE ?", "%#{search}%"
   end
+
+   #learn solution
+   #def self.search(search)
+  #  if search.present?
+    #  where('NAME like ?', "%#{search}%")
+  #  else
+    #  self.all
+    #end
+  #end
+
 end
