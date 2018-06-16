@@ -21,11 +21,7 @@ class StudentsController < ApplicationController
   end
 
   def index
-    if params[:search].present? && params[:search] != ''
-      @students = Student.search(params[:search])
-    else
-      @students = Student.all
-    end
+    @students = Student.search(params[:search])
   end
 
   def student_params
