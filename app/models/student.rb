@@ -13,4 +13,10 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(search)
+    student_array = Student.where("name LIKE ?", "%#{search}%")
+    # .find_by_sql ["SELECT * FROM students WHERE name LIKE ?", search]
+    student_array
+  end
 end
