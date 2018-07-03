@@ -9,6 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Found Youtube: https://www.youtube.com/watch?v=jKSm8kOWd_0
 
 class Student < ActiveRecord::Base
   has_many :classroom_students

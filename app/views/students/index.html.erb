@@ -1,3 +1,6 @@
+<%# Found Youtube: https://www.youtube.com/watch?v=jKSm8kOWd_0 %>
+<%# Creating search %>
+
 <%= form_tag(students_path, method: "get") do %>
   Students <%= text_field_tag :search, params[:search] %>
   <%= submit_tag 'Search', name: nil %>

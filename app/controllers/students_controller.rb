@@ -22,9 +22,9 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.search(params[:search])
-    # binding.pry
-    # @students = Student.all
-    # raise params.inspect
+    #Found Youtube: https://www.youtube.com/watch?v=jKSm8kOWd_0
+    #Creating search
+  
   end
 
   def student_params
