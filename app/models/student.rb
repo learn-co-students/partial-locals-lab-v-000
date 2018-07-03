@@ -13,4 +13,17 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+  
+  def self.search(query)
+    if query.present?
+      query = query.downcase
+      Student.all.select do |student|
+         if student.name.downcase.include?(query)
+           student
+         end
+       end
+    else
+      Student.all.map { |student| student }
+    end
+  end
 end
