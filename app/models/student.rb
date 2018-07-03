@@ -15,6 +15,8 @@ class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
 
+  #Found Youtube: https://www.youtube.com/watch?v=jKSm8kOWd_0
+
   def self.search(search)
     if search == ""
       @student_search = Student.all
@@ -23,12 +25,6 @@ class Student < ActiveRecord::Base
     end
   end
 
-#   def index
-#   if params[:store]
-#     @coupon = Coupon.where('store LIKE ?', "%#{params[:store]}%")
-#   else
-#     @coupon = Coupon.all
-#   end
-# end
+
 
 end
