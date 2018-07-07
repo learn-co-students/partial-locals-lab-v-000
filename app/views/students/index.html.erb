@@ -1,0 +1,14 @@
+<!-- 5. Add in search functionality such that users can search for a student by name and see all matching results on the students index page. The results should be displayed by rendering a `students/_student.html.erb` partial.
+ -->
+<%= form_tag(students_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Students" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<% if @students.present? %>
+	<% @students.each do |student| %>
+		<%= render partial: 'student', locals: {student: student} %>
+	<% end %>
+<% else %>
+	<p>There are no students by the name of <%= params[:search] %>.</p>
+<% end %>
