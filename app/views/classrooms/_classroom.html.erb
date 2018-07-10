@@ -2,3 +2,7 @@
 <%= classroom.course_name %>
 <%= classroom.semester %>
 </p>
+<%= form_tag(classrooms_path, method: :get) do %>
+  <%= text_field_tag :course_name, params[:course_name] %>
+  <%= submit_tag 'Search', name: nil%>
+  <%end%>
