@@ -1,0 +1,7 @@
+<% @students.each do |student| %>
+
+   <%if student.name.include?("#{params[:name]}")%>
+      <%= render partial:'student', locals: {student: student}  %>
+    <%end%>
+
+<%end%>
