@@ -16,11 +16,10 @@ class Student < ActiveRecord::Base
 
   def self.search(name)
     if name == ""
-      Student.all.collect {|student| student.name}
+      Student.all
     else
       name = name.to_s.downcase
       students = Student.all.select {|student| student.name.downcase.include? "#{name}"}
-      students.collect {|student| student.name}
     end
   end
 end
