@@ -17,12 +17,12 @@ class Classroom < ActiveRecord::Base
     students.where("birthday is not null").order("birthday asc").first
   end
 
-  def self.search(name)
-    if params[:name]
-      where('name LIKE ?', "%#{name}%")
-    else
-      Students.all
-    end
-  end
+  # def self.search(name)
+  #   if params[:name]
+  #     where('name LIKE ?', "%#{name}%")
+  #   else
+  #     Students.all
+  #   end
+  # end
 
 end
