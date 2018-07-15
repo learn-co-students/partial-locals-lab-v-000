@@ -4,7 +4,7 @@ Classroom Info
 
 Here are a list of the students in the class:
 
-<%@students.each do |student|%>
+<%@classroom.students.each do |student|%>
 
 <%= render partial: 'students/student', locals: {student: student} %>
 
