@@ -2,6 +2,9 @@ Classroom Info
 <%= render partial: "classroom", locals: {classroom: @classroom} %>
 
 We now want to call all students in the class:
-<% @students.each do |student| %>
+<% if @classroom.students %>
+  <% @classroom.students.each do |student| %>
+  <% binding.pry %>
   <%= render partial: 'students/student', locals: {student: student} %>
+  <% end %>
 <% end %>
