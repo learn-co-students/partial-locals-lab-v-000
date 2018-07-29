@@ -1,0 +1,7 @@
+<h1>Search for Student</h1>
+<%= form_tag students_search_path, method: "post" do %>
+  <label>Student Name:</label><br>
+  <%= text_field_tag :student_name %><br>
+
+  <%= submit_tag "Search" %>
+<% end %>
