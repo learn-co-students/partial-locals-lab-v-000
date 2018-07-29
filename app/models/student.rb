@@ -9,16 +9,16 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
+require 'pry'
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
 
-  def search (search_hash)
-    if search_hash.empty?
+  def self.search(name)
+    if name.empty?
       Student.all
     else
-      Student.find_by(search_hash)
+      Student.where("name LIKE ?", "%#{name}%")
     end
   end
 end
