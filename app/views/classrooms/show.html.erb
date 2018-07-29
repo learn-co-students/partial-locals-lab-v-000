@@ -3,5 +3,5 @@ Classroom Info
 
 <h3>Students</h3>
 <% @classroom.students.each do | student | %>
-  <%= render partial: "students/student", locals: {student_object: student}  %>
+  <%= render partial: "students/student", locals: {student: student}  %>
 <% end %>
