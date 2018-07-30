@@ -18,7 +18,7 @@ class Student < ActiveRecord::Base
     array = []
     self.all.each do |student|
       if student.name.downcase.include?(name.downcase)
-        array << student.name
+        array << student
       end
     end
     array
