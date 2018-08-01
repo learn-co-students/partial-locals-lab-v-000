@@ -1,4 +1,10 @@
 class StudentsController < ApplicationController
+
+  def index
+    @students = Student.search(params[:search])
+    render :index 
+  end
+  
   def new
     @student = Student.new
   end
