@@ -1,0 +1,14 @@
+<h1>Students Index</h1>
+<h2>Search For a Student</h2>
+<!-- Allow users to search for a student  -->
+<% form_tag students_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<!-- result(s) displayed with student partial -->
+<%= @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
+<% end %>
