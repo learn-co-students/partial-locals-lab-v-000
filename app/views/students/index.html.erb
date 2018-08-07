@@ -1,0 +1,14 @@
+<%= render "student", search: @students do |f| %>
+  <h1>Search form:</h1>
+  <fieldset>
+    <%= f.label :query %>
+    <%= f.text_field :query %>
+  </fieldset>
+  <p>
+    <%= f.submit "Search" %>
+  </p>
+<% end %>
+
+
+<h1>Results</h1>
+<%= render partial: "student", locals: {student: Student.search(:query)} %>
