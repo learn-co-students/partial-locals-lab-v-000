@@ -1,0 +1,11 @@
+
+<form action="search" method="post">
+  First name:<br>
+  <input type="text" name="name"><br>
+  <form action="/action_page.php">
+  <input type="submit" value="Submit">
+</form>
+
+<% @students.each do |student1| %>
+<%= render partial:"student", locals: {student: student1} %>
+<% end %>
