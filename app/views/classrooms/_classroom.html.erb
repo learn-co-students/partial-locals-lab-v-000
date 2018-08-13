@@ -1,0 +1,5 @@
+<%if classroom.students != nil%>
+  <%classroom.students.each do |student|%>
+  <%= render partial: 'students/student', locals: {student: student}%>
+  <%end%>
+<%end%>
