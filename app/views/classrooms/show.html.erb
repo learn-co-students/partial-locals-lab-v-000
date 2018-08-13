@@ -5,6 +5,8 @@ Classroom Info
 </p>
 
 We now want to call out the oldest student in the class:
-<%@classroom.students.each do |student|%>
-<%= render partial: 'students/student', locals: {student: student},  %> unless student.nil?
+<%if !@classroom.students.nil?%>
+  <%@classroom.students.each do |student|%>
+  <%= render partial: 'students/student', locals: {student: student}%>
+  <%end%>
 <%end%>
