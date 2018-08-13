@@ -1,6 +1,7 @@
 
+<%binding.pry%>
 <%if classroom.students != []%>
-  <%classroom.students.each do |student|%>
-  <%= render partial: 'students/student', locals: {student: student}%>
+  <%classroom.students.each do |s|%>
+  <%= render partial: 'students/student', locals: {student: s}%>
   <%end%>
 <%end%>
