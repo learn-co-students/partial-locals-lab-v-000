@@ -1,1 +1,1 @@
-<%= render partial: "student", locals: {student: @student} %>
+<%= render partial: "students/student", collection: Student.all, as: "student" %>
