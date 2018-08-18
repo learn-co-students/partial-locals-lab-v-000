@@ -1,0 +1,6 @@
+
+
+ <!-- this could easily be writen 'render @students' if it wasn't for the last index test -->
+<% @students.each do |student| %>
+  <%= render partial: 'student',locals:{student:student} %>
+<% end %>
