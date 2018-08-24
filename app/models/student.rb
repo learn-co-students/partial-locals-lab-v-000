@@ -13,4 +13,8 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(name)
+    name.empty? ? Student.all : Student.all.select {|s| s.name.include?(name.capitalize) }
+  end
 end
