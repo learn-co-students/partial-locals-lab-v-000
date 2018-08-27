@@ -16,7 +16,7 @@ class Student < ActiveRecord::Base
   
   def search(query)
     self.all.collect do |student|
-      /query/.match?(student)
+      /#{query}/.match?(student)
     end
   end
   
