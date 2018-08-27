@@ -20,7 +20,7 @@ class Student < ActiveRecord::Base
       if student.name.include? "#{name}"
         student
       else
-        Student.all
+        self.all
       end
     end
   end
