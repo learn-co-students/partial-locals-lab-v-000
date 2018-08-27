@@ -1,16 +1,16 @@
 
-<% binding.pry %>
+<% # binding.pry %>
 
-<% student_array.each do |student| %>
+<% student.each do |stdnt| %>
   <ul>
     <li>
-      Name: <%= student.name %>
+      Name: <%= stdnt.name %>
     </li>
     <li>
-      Birthday: <%= student.birthday.strftime("%m/%d/%Y")  %>
+      Birthday: <%= stdnt.birthday.strftime("%m/%d/%Y")  %>
     </li>
     <li>
-      Hometown: <%= student.hometown.capitalize %>
+      Hometown: <%= stdnt.hometown.capitalize %>
     </li>
   </ul>
 <% end %>
