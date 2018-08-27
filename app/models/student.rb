@@ -15,7 +15,9 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
   
   def search(query)
-    
+    self.all.collect do |student|
+      /query/.match?(student)
+    end
   end
   
 end
