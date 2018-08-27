@@ -1,19 +1,33 @@
 
-<% # binding.pry %>
-
-<% student.each do |stdnt| %>
+<% if student.is_a?(Array) %>
+  <% student.each do |stdnt| %>
+    <ul>
+      <li>
+        Name: <%= stdnt.name %>
+      </li>
+      <li>
+        Birthday: <%= stdnt.birthday.strftime("%m/%d/%Y")  %>
+      </li>
+      <li>
+        Hometown: <%= stdnt.hometown.capitalize %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
   <ul>
     <li>
-      Name: <%= stdnt.name %>
+      Name: <%= student.name %>
     </li>
     <li>
-      Birthday: <%= stdnt.birthday.strftime("%m/%d/%Y")  %>
+      Birthday: <%= student.birthday.strftime("%m/%d/%Y")  %>
     </li>
     <li>
-      Hometown: <%= stdnt.hometown.capitalize %>
+      Hometown: <%= student.hometown.capitalize %>
     </li>
   </ul>
 <% end %>
+
+
 
 
 
