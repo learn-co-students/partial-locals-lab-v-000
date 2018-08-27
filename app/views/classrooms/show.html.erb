@@ -1,6 +1,4 @@
 
-<% # binding.pry %>
-
-<%= render partial: '_classroom', locals: {classroom: @classroom} %>
+<%= render partial: 'classroom', locals: {classroom: @classroom} %>
 
 <%= render partial: 'students/student', locals: {student: @classroom.students} %>
