@@ -16,8 +16,8 @@ class Student < ActiveRecord::Base
   
   def self.search(query)
     self.all.collect do |student|
-binding.pry      
-      student.name.include? query
+# binding.pry      
+      student.name.include? query if student.name
     end
   end
   
