@@ -23,7 +23,7 @@ RSpec.describe "Student" do
         view.lookup_context.prefixes = %w[students]
         assign(:students, Student.search('rob'))
         render :template => "students/index.html.erb"
-        expect(rendered).to render_template(:partial => "student", locals: {student: Student.search('rob').first})
+        expect(rendered).to render_template(:partial => "student", locals: {student: Student.search('rob')})
       end
     end
   end
