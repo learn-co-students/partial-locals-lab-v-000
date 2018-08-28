@@ -1,11 +1,32 @@
-<ul>
-  <li>
-    Name: <%= @student.name %>
-  </li>
-  <li>
-    Birthday: <%= @student.birthday.strftime("%m/%d/%Y")  %>
-  </li>
-  <li>
-    Hometown: <%= @student.hometown.capitalize %>
-  </li>
-</ul>
+
+<% if student.is_a?(Student) %>
+
+  <ul>
+    <li>
+      Name: <%= student.name %>
+    </li>
+    <li>
+      Birthday: <%= student.birthday.strftime("%m/%d/%Y")  %>
+    </li>
+    <li>
+      Hometown: <%= student.hometown.capitalize %>
+    </li>
+  </ul>
+
+<% else %>
+
+  <% student.each do |stdnt| %>
+    <ul>
+      <li>
+        Name: <%= stdnt.name %>
+      </li>
+      <li>
+        Birthday: <%= stdnt.birthday.strftime("%m/%d/%Y")  %>
+      </li>
+      <li>
+        Hometown: <%= stdnt.hometown.capitalize %>
+      </li>
+    </ul>
+  <% end %>
+
+<% end %>
