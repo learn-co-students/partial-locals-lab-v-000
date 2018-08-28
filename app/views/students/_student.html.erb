@@ -1,4 +1,6 @@
 
+<% binding.pry %>
+
 <% if student.is_a?(Student) %>
 
   <ul>
@@ -12,7 +14,7 @@
       Hometown: <%= student.hometown.capitalize %>
     </li>
   </ul>
-  
+
 <% else %>
 
   <% student.each do |stdnt| %>
@@ -28,12 +30,5 @@
       </li>
     </ul>
   <% end %>
-  
+
 <% end %>
-
-
-
-
-
-
-
