@@ -20,10 +20,11 @@ class Student < ActiveRecord::Base
     else
       temp = self.all.collect do |student|
 binding.pry
-        if student.name.upcase && student.name.upcase.include?(query)
+        if student.name && student.name.upcase.include?(query.upcase)
           student
         end
       end
+# binding.pry
     end
   end
   
