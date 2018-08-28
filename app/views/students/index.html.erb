@@ -1,4 +1,4 @@
 
-<% binding.pry %>
-
-<%= render partial: 'student', locals: {student: @students} %>
+<% @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
+<% end %>
