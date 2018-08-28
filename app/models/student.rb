@@ -15,18 +15,16 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
   
   def self.search(query)
-    
     if query.empty?
-      self.all
+      temp = self.all
     else
       temp = self.all.collect do |student|
+binding.pry
         if student.name && student.name.include?(query)
           student
         end
       end
     end
-    
-    binding.pry 
   end
   
 end
