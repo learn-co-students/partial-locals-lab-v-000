@@ -16,16 +16,19 @@ class Student < ActiveRecord::Base
   
   def self.search(query)
     if query.empty?
-      temp = self.all
+      results = self.all
     else
-      temp = self.all.collect do |student|
-binding.pry
+      
+      results = self.all.collect do |student|
+        
         if student.name && student.name.upcase.include?(query.upcase)
           student
         end
+        
       end
-# binding.pry
+      
     end
+    results.compact
   end
   
 end
