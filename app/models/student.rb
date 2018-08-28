@@ -16,11 +16,13 @@ class Student < ActiveRecord::Base
   
   def self.search(query)
     
-    if query == ""
-    
-    temp = self.all.collect do |student|
-      if student.name && student.name.include?(query)
-        student
+    if query.empty?
+      self.all
+    else
+      temp = self.all.collect do |student|
+        if student.name && student.name.include?(query)
+          student
+        end
       end
     end
     
