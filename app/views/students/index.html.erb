@@ -1,0 +1,15 @@
+<%= form_tag(students_path, :method => "get") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Students" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+<%if @students.empty?%>
+  <p>There are no students that match: <%=params[:search]%></p>
+<%else%>
+  <%@students.each do |student|%>
+    <%=render partial: 'student', locals: {student: student}%>
+  <%end%>
+<%end%>
+
+<%if params[:search]%>
+<%=link_to("All Students", students_path)%>
+<%end%>
