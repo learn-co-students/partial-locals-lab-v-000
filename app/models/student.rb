@@ -17,7 +17,6 @@ class Student < ActiveRecord::Base
   def self.search(search_params)
     if search_params.present?
       self.where("lower(name) LIKE ?", '%' + search_params.downcase + '%')
-      
     else
       self.all
     end
