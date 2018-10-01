@@ -1,3 +1,5 @@
 <h1>Student Info</h1>
 
-<%= render 'student' %>
+<ul>
+  <%= render partial: 'form', locals: {student: @student} %>
+</ul>
