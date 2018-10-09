@@ -1,0 +1,8 @@
+<%form_tag students_path, method: :get do %>
+<%label :search%>
+<%text_field_tag :student,params[:name]%>
+<%=submit_tag%>
+<%end%>
+
+<%= render partial: 'student', locals: {student: student}%>
+
