@@ -1,7 +1,4 @@
 class StudentsController < ApplicationController
-  def search
-  end
-
   def new
     @student = Student.new
     # "localhost:3000/users/search"
@@ -25,12 +22,7 @@ class StudentsController < ApplicationController
   end
 
   def index
-    # binding.pry
-    if params[:query] != ""
-      @students = Student.search(params[:query])
-    else
-      @students = Student.all
-    end
+    @students = Student.search(params[:query])
     render "index"
   end
 
