@@ -26,7 +26,7 @@ this isn't very polite.
 Second, they also want to add some search functionality so that a user can
 search for a student by name. It's okay if other students with similar names are
 returned in the search results.
-
+                 
 ## Instructions
 
 1. Refactor the `_form.html.erb` partial to accept the argument to the
