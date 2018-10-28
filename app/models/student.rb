@@ -13,4 +13,10 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+#class method to find student name
+  def self.search(fragment)
+    Student.all.select{ |student| student.name.downcase.include?(fragment.downcase) }
+  end
+
 end
