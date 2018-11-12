@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(student_params)
+    @student = Student.create(student_params)
     if @student.save
       redirect_to @student
     else
@@ -21,8 +21,9 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    @students = Student.search(params[:name])
   end
+
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
