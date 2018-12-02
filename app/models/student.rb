@@ -16,8 +16,12 @@ class Student < ActiveRecord::Base
 
 
   def self.search(student_name)
-    Student.all.map do |student|
-      student.name.include?(student_name)
+    if student_name == ""
+      Student.all
+    else
+      Student.all.find do |student|
+        student.name.include?(student_name)
+      end 
     end
   end
 
