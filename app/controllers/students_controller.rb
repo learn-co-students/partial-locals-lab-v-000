@@ -13,15 +13,14 @@ class StudentsController < ApplicationController
   end
 
   def edit
-  
   end
 
   def show
-
   end
 
   def index
-    @student = Student.search(params[:search])
+    @students = Student.search(params[:search])
+    render 'index'
   end
 
   def student_params
