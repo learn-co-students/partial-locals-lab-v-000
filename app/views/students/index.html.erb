@@ -1,6 +1,12 @@
-<h1>Hello</h1>
+<h1>Find Students<h1>
 
 <%= form_tag students_path, method: :get do %>
   <%= text_field 'search', params[:search], placeholder: 'Enter name' %>
   <%= submit_tag "Search" %>
+<% end %>
+
+<% if @students.present? %>
+  <% @students.each do |student| %>
+    <%= render partial: 'student', locals: {student: student} %>
+  <% end %>
 <% end %>
