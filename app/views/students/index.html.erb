@@ -1,7 +1,7 @@
 <h1>Find Students<h1>
 
 <%= form_tag students_path, method: :get do %>
-  <%= text_field 'search', params[:search], placeholder: 'Enter name' %>
+  <%= text_field_tag :search %>
   <%= submit_tag "Search" %>
 <% end %>
 
