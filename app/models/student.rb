@@ -16,18 +16,18 @@ class Student < ActiveRecord::Base
 
   def self.search(sname)
     if sname != ""
-      students = []
+      @students = []
       
       all.each do |student|
         
         if student.name.downcase.include?(sname)
-          students << student
+          @students << student
         end
                
       end  
-      students   
+      @students        
     else
-      all
+      @students = all
     end
   end
 end
