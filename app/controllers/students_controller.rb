@@ -21,7 +21,10 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    # binding.pry
+    if params[:search]
+      @students = Student.search(params[:search][0])
+    end
   end
 
   def student_params
