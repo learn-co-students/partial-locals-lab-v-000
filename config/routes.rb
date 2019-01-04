@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  post 'students/student_search', to: 'students#index', as: 'student_search'
-  get 'students/student_search', to: 'students#index'
   resources :classrooms
   resources :students
   # get 'students/student_search'
