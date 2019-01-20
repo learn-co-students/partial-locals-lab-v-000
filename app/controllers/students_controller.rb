@@ -22,7 +22,11 @@ class StudentsController < ApplicationController
 
   def index
     #raise params.inspect
-    @students = Student.search(params[:search])
+    if params[:search].present?
+      @students = Student.search(params[:search])
+    else
+      @students = []
+    end 
   end
 
   private
