@@ -1,9 +1,7 @@
 class ClassroomsController < ApplicationController
+
   def show
     @classroom = Classroom.find(params[:id])
-    binding.pry
-    @student = Student.find(params[:id])
-
   end
 
   def index
