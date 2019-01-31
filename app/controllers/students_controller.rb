@@ -1,4 +1,13 @@
 class StudentsController < ApplicationController
+
+  def search
+    if Students.search.map {|s| s.name } == ""
+      Student.all
+    else
+      render students_path(index)
+    end
+  end
+
   def new
     @student = Student.new
   end
