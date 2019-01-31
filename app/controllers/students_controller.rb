@@ -1,12 +1,17 @@
 class StudentsController < ApplicationController
 
-  def search
-    if Students.search.map {|s| s.name } == ""
-      Student.all
-    else
-      render students_path(index)
-    end
+
+  def index
+    @students = Student.all
   end
+
+#  def search
+#    if Students.search.map {|s| s.name } == ""
+#      Student.all
+#    else
+#      render students_path(index)
+#    end
+#  end
 
   def new
     @student = Student.new
@@ -29,9 +34,6 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
-  def index
-    @students = Student.all
-  end
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
