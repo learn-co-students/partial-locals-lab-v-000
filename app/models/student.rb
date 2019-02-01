@@ -14,6 +14,14 @@ class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
 
+  def search
+    if student.search ==""
+      @students = Student.all
+    else
+      redirect_to _classroom_url
+    end
+  end
+
 
 
 end

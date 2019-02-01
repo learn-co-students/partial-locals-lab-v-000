@@ -5,14 +5,6 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
-#  def search
-#    if Students.search.map {|s| s.name } == ""
-#      Student.all
-#    else
-#      render students_path(index)
-#    end
-#  end
-
   def new
     @student = Student.new
   end
