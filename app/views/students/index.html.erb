@@ -1,5 +1,1 @@
-<% render partial:"student", locals: {student: Student.(@student)first}
-
-
-
-<% end %>
+<% render partial: "student", students.search.collection: @student.name %>
