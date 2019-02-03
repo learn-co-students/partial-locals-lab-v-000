@@ -1,1 +1,7 @@
-<% render partial: "student", students.search.collection: @student.name %>
+
+<% form_tag students_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :student_name => @student.name %>
+  </p>
+<% end %>
