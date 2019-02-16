@@ -13,4 +13,10 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(term)
+  	matches = Student.all.map{|s| s if s.name.include?(term)}
+  	Student.all if matches.count == 0
+  end
+
 end
