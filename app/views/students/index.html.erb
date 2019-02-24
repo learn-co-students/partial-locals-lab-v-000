@@ -1,0 +1,5 @@
+<h1>Student Searched page</h1>
+
+<% @students.each do |stu|%>
+  <li><%=render :partial => "student", locals: {student: stu}%></li>
+<% end %>
