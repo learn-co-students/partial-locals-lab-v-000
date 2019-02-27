@@ -12,17 +12,22 @@ class StudentsController < ApplicationController
     end
   end
 
+  
   def edit
     @student = Student.find(params[:id])
   end
 
   def show
     @student = Student.find(params[:id])
+    @students = Student.all
   end
 
   def index
-    @students = Student.all
+    @students = Student.all.search(arg)
   end
+  
+
+  
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
