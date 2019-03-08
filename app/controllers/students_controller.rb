@@ -24,13 +24,13 @@ class StudentsController < ApplicationController
     # binding.pry
     @students = Student.all
     @name_text = params[:name_text]
-    binding.pry
+    # binding.pry
     # @name_text =
     # @student = Student.search(name_text)
   end
 
   def student_params
-    binding.pry
-    params.require(:student).permit(:name, :birthday, :hometown)
+    # binding.pry
+    params.require(:student).permit(:name, :birthday, :hometown, :name_text)
   end
 end

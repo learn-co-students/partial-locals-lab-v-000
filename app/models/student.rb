@@ -19,18 +19,33 @@ class Student < ActiveRecord::Base
 
 # use find_all
   def self.search(name_text)
-        if !name_text.empty?
-          #  binding.pry
-           @answer = self.all.find_all do |student|
-           if student.name.downcase.include?(name_text)
-              student.name
-           end
+
+        if name_text == nil || name_text.empty?
+          Student.all
+        else
+          @answer = self.all.find_all do |student|
+          if student.name.downcase.include?(name_text)
+             student.name
           end
-       else !name_text.empty? || name_text == nil
-            Student.all
-       end
-      #  binding.pry
-  end
+        end 
+        end
+      end
+
+
+
+
+  #       if !name_text.empty?
+  #         #  binding.pry
+  #          @answer = self.all.find_all do |student|
+  #          if student.name.downcase.include?(name_text)
+  #             student.name
+  #          end
+  #         end
+  #      else !name_text.empty? || name_text == nil
+  #           Student.all
+  #      end
+  #     #  binding.pry
+  # end
 
 
 end

@@ -27,7 +27,7 @@ term. then have to make that string available to be used in the loop. -->
 <% end %>
 
 
-<%# Student.search(name_text).each do |student|  %>
+<% Student.search(@name_text).each do |student|  %>
 <%# binding.pry %>
-<%#= render partial: 'student', locals: { student: student } %>
-<%# end %>
+<%= render partial: 'student', locals: { student: student } %>
+<% end %>
