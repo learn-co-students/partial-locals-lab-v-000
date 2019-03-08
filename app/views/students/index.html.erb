@@ -1,0 +1,33 @@
+
+<%# binding.pry %>
+<!-- # check out the spec for hints about where the form should be to enter the search
+term. then have to make that string available to be used in the loop. -->
+
+
+<%# binding.pry %>
+
+<!-- Type in what you'd like to search for! -->
+
+<%# form_for @student do  %>
+<%# f.label :term %>
+<%# f.text_field :term %>
+<%# f.submit %>
+<%# end %>
+
+
+
+
+<%= form_tag('/students') do %>
+<h1> Submit Your Search Term! </h1>
+<%= text_field_tag :'name_text' %>
+<%= submit_tag "Search Term" %>
+
+<%# binding.pry %>
+
+<% end %>
+
+
+<% Student.search(@name_text).each do |student|  %>
+<%# binding.pry %>
+<%= render partial: 'student', locals: { student: student } %>
+<% end %>
