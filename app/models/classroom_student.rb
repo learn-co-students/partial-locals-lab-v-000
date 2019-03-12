@@ -12,4 +12,8 @@
 class ClassroomStudent < ActiveRecord::Base
   belongs_to :classroom
   belongs_to :student
+
+  def oldest_student
+    students.where("birthday is not null").order("birthday asc").first
+  end
 end
