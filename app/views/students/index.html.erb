@@ -1,0 +1,3 @@
+<% @students.each do |student|%>
+    <%= render partial: 'student', locals: {post_student: Student.search('rob').first} %>
+<% end %>
