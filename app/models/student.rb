@@ -13,4 +13,20 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(query)
+    if query == ""
+      Student.all
+    else
+      array = []
+      Student.all.each do |student|
+        if student.name.include?("#{query}")
+          array << student
+        end
+      end
+      array
+    end
+
+  end
+
 end
