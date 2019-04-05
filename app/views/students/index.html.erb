@@ -1,0 +1,9 @@
+<form>
+  Search:
+  <input type="text" name="query">
+
+</form>
+
+<% @students.each do |student| %>
+  <%= render partial: 'student', locals: {student: student} %>
+<% end %>
