@@ -16,4 +16,11 @@ class Classroom < ActiveRecord::Base
   def oldest_student
     students.where("birthday is not null").order("birthday asc").first
   end
+
+  def self.search(name)
+    if name.blank?
+      self.all
+    end
+  end
+
 end
