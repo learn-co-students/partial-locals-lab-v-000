@@ -17,10 +17,4 @@ class Classroom < ActiveRecord::Base
     students.where("birthday is not null").order("birthday asc").first
   end
 
-  def self.search(name)
-    if name.blank?
-      self.all
-    end
-  end
-
 end
