@@ -13,4 +13,18 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def search
+    @students = Student.all
+
+    @students.map do |s|
+      if s.name == " "
+        @students
+      else
+        # s.name.match 
+      end
+
+    end
+
+  end
 end
