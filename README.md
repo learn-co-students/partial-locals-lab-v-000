@@ -1,10 +1,10 @@
-# Partials with Locals
+lear# Partials with Locals
 
 Now that we learned about locals, let's refactor our old codebase and add a
 couple new features using this new tool.
 
 ## Objectives
-
+jlj
 1. Use the `locals` keyword
 2. Understand why using instance variables in partials is bad
 3. Use a partial to iterate over a collection, passing in a local
