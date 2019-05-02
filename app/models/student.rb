@@ -15,12 +15,12 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(student_name)
-    # students = []
+    students = []
     self.all.map do |student|
       if student.name.match(/#{student_name}/i)
-        # students << student
+        students << student
       end
     end
-    # students
+    students
   end
 end
