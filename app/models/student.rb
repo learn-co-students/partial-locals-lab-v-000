@@ -16,7 +16,7 @@ class Student < ActiveRecord::Base
 
   def self.search(student_name)
     students = []
-    self.all.each do |student|
+    self.all.map do |student|
       if student.name.match(/#{student_name}/i)
         students << student
       end
