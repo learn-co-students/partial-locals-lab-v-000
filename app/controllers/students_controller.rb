@@ -21,10 +21,13 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    @students = Student.search(params[:search])
+    #Found Youtube: https://www.youtube.com/watch?v=jKSm8kOWd_0
+    #Creating search
+  
   end
 
   def student_params
-    params.require(:student).permit(:name, :birthday, :hometown)
+    params.require(:student).permit(:name, :birthday, :hometown, :search)
   end
 end
