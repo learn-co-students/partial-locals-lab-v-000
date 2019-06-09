@@ -1,5 +1,5 @@
 <%= form_tag students_path, method: :get do %>
-  <%= label_tag(:query, "Search for a Student:") %>
+  <%= label_tag :query, "Search for a Student:" %>
   <%= text_field_tag :query, params[:query] %>
   <%= submit_tag "Search", name: nil %>
 <% end %>
