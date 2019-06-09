@@ -1,0 +1,9 @@
+<% if @student %>
+<% @student.each do |student| %>
+  <%= render partial: 'student', locals: { student: student } %>
+<% end %>
+<% else %>
+  <% @students.each do |student| %>
+    <%= render partial: 'student', locals: { student: student } %>
+  <% end %>
+<% end %>
