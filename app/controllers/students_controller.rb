@@ -21,9 +21,11 @@ class StudentsController < ApplicationController
   end
 
   def index
-    # all tests are passing, but search query returns an empty array in browser
-    @students = Student.search(params[:query])
-    render 'index'
+    if !params[:query].blank?
+      @students = Student.search(params[:query])
+    else
+      @students = Student.all
+    end
   end
 
   def student_params

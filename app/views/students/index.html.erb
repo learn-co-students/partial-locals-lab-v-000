@@ -1,9 +1,10 @@
-<%= form_tag students_path, method: :get do %>
+<%= form_tag("/students", method: :get) do %>
   <%= label_tag :query, "Search for a Student:" %>
   <%= text_field_tag :query, params[:query] %>
-  <%= submit_tag "Search", name: nil %>
+  <%= submit_tag "Search" %>
 <% end %>
 
+<!-- array of student objects is printing at the bottom of the page in the browser, can't figure out why -->
 <%= @students.each do |student| %>
   <%= render partial: "student", locals: {student: student} %>
 <% end %>
