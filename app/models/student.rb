@@ -13,4 +13,13 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(name)
+    if result = self.all.select {|student| student.name.split(" ")[0][/#{name}/i]}
+      result
+    else
+      self.all
+    end
+  end
+
 end
