@@ -2,7 +2,7 @@
 require "rails_helper"
 
 RSpec.describe "Student" do
-  describe 'search' do
+  describe 'query' do
     let(:student_names) { ['Bob', 'Robert', 'Roberta', 'Shirley', 'Shelby'] }
 
     before do
