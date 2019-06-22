@@ -1,0 +1,5 @@
+<%if !!@students%>
+<%@students.each do |student_entry| %>
+<%= render partial: 'student', locals: {student: student_entry} %>
+<%end%>
+<%end%>
