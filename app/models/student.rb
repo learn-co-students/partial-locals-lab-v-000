@@ -1,3 +1,4 @@
+require "pry"
 # == Schema Information
 #
 # Table name: students
@@ -13,4 +14,16 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+
+  def self.search(student_name)
+      if student_name.empty?
+          @students = self.all
+      else
+         self.all.find_all do |student|
+              student.name.downcase.include?(student_name)
+
+          end
+      end
+  end
 end
