@@ -1,0 +1,8 @@
+<%= form_tag students_path do %>
+  <%= search_field_tag :query %>
+<% end %>
+<% if @students %>
+  <% @students.each do |student| %>
+    <%= render partial: 'student', locals: {student: student} %>
+  <% end %>
+<% end %>
