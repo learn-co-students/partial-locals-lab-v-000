@@ -13,4 +13,9 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(arg)
+    Student.all.map {|s| s if s.name.include?(arg.titleize)}.compact
+
+  end
 end
