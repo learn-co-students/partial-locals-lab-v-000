@@ -21,7 +21,13 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+    # @students = Student.all
+    @students = Student.search(params[:search])
+    # if params[:search]
+    #   @students = Student.search(params[:search]).order("created_at DESC")
+    # else
+    #   @students = Student.all.order('created_at DESC')
+    # end
   end
 
   def student_params
