@@ -21,7 +21,9 @@ class StudentsController < ApplicationController
   end
 
   def index
+    binding.pry
     @students = Student.all
+    @selected_students = Student.search(query)
   end
 
   def student_params
