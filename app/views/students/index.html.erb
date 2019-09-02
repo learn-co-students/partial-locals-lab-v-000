@@ -1,0 +1,4 @@
+<h2>Search results</h2>
+<% @students.each do |s| %>
+  <%= render partial: "student", locals: {student: s} %>
+<% end %>
