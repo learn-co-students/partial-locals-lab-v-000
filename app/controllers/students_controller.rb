@@ -1,4 +1,9 @@
 class StudentsController < ApplicationController
+  def index
+    @students = Students.all
+  end
+
+  
   def new
     @student = Student.new
   end
