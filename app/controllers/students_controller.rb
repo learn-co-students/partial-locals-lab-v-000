@@ -21,7 +21,9 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+  #Add in search functionality such that users can search for a student by name
+  #and see all matching results on the students index page.
+    @students = Student.search(params[:query_name])
   end
 
   def student_params
