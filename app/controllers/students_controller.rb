@@ -16,13 +16,20 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+  def index
+    #raise params.inspect
+    if params[:student]
+      @students = Student.search(params[:student])
+    else
+      @students = Student.all
+    end
+  end
+
   def show
     @student = Student.find(params[:id])
   end
 
-  def index
-    @students = Student.all
-  end
+
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
